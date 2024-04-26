@@ -34,11 +34,11 @@ const Registion = () => {
     });
   };
   return (
-    <div className="flex justify-center p-4 mt-10">
+    <div className="flex justify-center p-4 pt-10 pb-6 bg-gradient-to-bl from-indigo-500 via-purple-500 to-pink-500">
       <Helmet>
         <title>Elite Haven || Registration</title>
       </Helmet>
-      <div className=" rounded-xl p-6 md:w-2/3 xl:w-1/3 mx-auto shadow-xl border-t">
+      <div className=" rounded-lg p-6 md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-white">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1 className="text-4xl font-bold mt-12">Register New Account.</h1>
           <p className="font-medium mt-6 opacity-70">

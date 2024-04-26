@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const Navbar = () => {
   const { user, logout } = useAuth();
   const normalLink = "lg:font-bold lg:text-lg lg:mr-2 mt-2 lg:mt-0";
-  const activeLink = `bg-gradient-to-r from-[#4facfe] to-blue-500 border border-blure-500 text-white hover:bg-transparent focus:bg-transparent focus:text-white ${normalLink}`;
+  const activeLink = `bg-gradient-to-r from-[#4facfe] to-blue-500 border border-blure-500 text-white border-none hover:bg-transparent focus:bg-transparent focus:text-white ${normalLink}`;
   const [theme, setTheme]=useState("light")
   const handleTheme =(e)=>{
     if (e.target.checked) {
@@ -19,7 +19,7 @@ const Navbar = () => {
     document.querySelector("html").setAttribute("data-theme", theme)
   },[theme])
   return (
-    <div className="sticky top-0 z-40 bg-white">
+    <div className="sticky top-0 z-40 bg-white shadow-xl">
       <div className="navbar bg-base-100 container mx-auto p-4 ">
         <div className="navbar-start">
           <div className="dropdown">
