@@ -38,7 +38,7 @@ const Registion = () => {
       <Helmet>
         <title>Elite Haven || Registration</title>
       </Helmet>
-      <div className=" rounded-lg p-6 md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-white">
+      <div className=" rounded-lg p-6 md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-base-100">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1 className="text-4xl font-bold mt-12">Register New Account.</h1>
           <p className="font-medium mt-6 opacity-70">
@@ -48,7 +48,7 @@ const Registion = () => {
           <input
             placeholder="Enter Your Full Name"
             {...register("name", { required: true })}
-            className="w-full border-b-2 py-4  outline-none mt-10"
+            className="w-full border-b-2 py-4  outline-none mt-10 bg-base-100"
           />
           {errors.name && (
             <span className="text-red-600">Enter Your Full Name</span>
@@ -56,7 +56,7 @@ const Registion = () => {
           <input
             placeholder="Enter Your Photo URL"
             {...register("photo", { required: true })}
-            className="w-full border-b-2 py-4  outline-none mt-6"
+            className="w-full border-b-2 py-4  outline-none mt-6 bg-base-100"
           />
           {errors.photo && (
             <span className="text-red-600">Give Your Photo URL</span>
@@ -64,7 +64,7 @@ const Registion = () => {
           <input
             placeholder="Enter Your Email"
             {...register("email", { required: true })}
-            className="w-full border-b-2 py-4  outline-none mt-6"
+            className="w-full border-b-2 py-4  outline-none mt-6 bg-base-100"
           />
           {errors.email && <span className="text-red-600">Enter Email</span>}
           <div className="relative">
@@ -72,7 +72,7 @@ const Registion = () => {
               type={isHide ? "text" : "password"}
               placeholder="Enter Your Password"
               {...register("password", { required: true })}
-              className="w-full border-b-2 py-4 outline-none mt-6"
+              className="w-full border-b-2 py-4 outline-none mt-6 bg-base-100"
             />
             <p
               className="absolute right-5 top-11 hover:cursor-pointer"

@@ -19,7 +19,7 @@ const Navbar = () => {
     document.querySelector("html").setAttribute("data-theme", theme)
   },[theme])
   return (
-    <div className="sticky top-0 z-40 bg-white shadow-xl">
+    <div className="sticky top-0 z-40 bg-base-100 shadow-xl">
       <div className="navbar bg-base-100 container mx-auto p-4 ">
         <div className="navbar-start">
           <div className="dropdown">

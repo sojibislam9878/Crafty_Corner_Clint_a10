@@ -41,7 +41,7 @@ const Login = () => {
   return (
     <div className=" bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500">
       <div className="flex justify-center items-center p-4 pt-10 pb-12 ">
-        <div className=" rounded-lg p-6  md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-white">
+        <div className=" rounded-lg p-6  md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-base-100">
           <form onSubmit={handleSubmit(onSubmit)}>
           <h1 className="text-4xl font-bold mt-12">Login Your Account.</h1>
             <p className="font-medium mt-6 opacity-70">
@@ -55,7 +55,7 @@ const Login = () => {
               <input
                 placeholder="email"
                 {...register("email", { required: true })}
-                className="w-full py-4  outline-none mt-10 bg-white"
+                className="w-full py-4  outline-none mt-10 bg-base-100"
               />
             </div>
             {errors.email && <span className="text-red-600">Enter Email</span>}
@@ -66,7 +66,7 @@ const Login = () => {
                   type={isHide ? "text" : "password"}
                   placeholder="password"
                   {...register("password", { required: true })}
-                  className="w-full py-4 outline-none mt-6 bg-white"
+                  className="w-full py-4 outline-none mt-6 bg-base-100"
                 />
               </div>
               <p
