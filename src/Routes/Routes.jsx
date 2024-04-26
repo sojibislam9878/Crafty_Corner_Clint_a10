@@ -6,6 +6,7 @@ import AddCarft from "../Pages/AddCarft";
 import AllCarft from "../Pages/AllCarft";
 import MyCarft from "../Pages/MyCarft";
 import Home from "../Pages/Home";
+import PrivetRoute from "../Components/PrivetRoute/PrivetRoute";
 
 
 export const router = createBrowserRouter([
@@ -28,7 +29,9 @@ export const router = createBrowserRouter([
         },
         {
           path: "/addcarft",
-          element:<AddCarft></AddCarft>,
+          element:<PrivetRoute>
+            <AddCarft></AddCarft>
+          </PrivetRoute>
         },
         {
           path: "/allcarft",

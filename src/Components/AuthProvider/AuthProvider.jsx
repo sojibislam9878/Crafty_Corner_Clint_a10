@@ -6,7 +6,9 @@ import { auth } from "../../firebase/FirebaseConfig";
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
+  
   const createUserWithEmail = (email, password, toast) => {
+    setLoading(true)
     if (password.length < 6) {
       return toast.warn("Password must be at least 6 characters long", {
         position: "top-right",
@@ -71,15 +73,20 @@ const AuthProvider = ({ children }) => {
      signInWithPopup(auth, githubProvider)
    };
 
+
+   const [loading, setLoading] = useState(true);
+
    //   user
   const [user, setUser] = useState(null);
   //   check user
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubcribe =  onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
       }
+      setLoading(false)
     });
+    return ()=>unsubcribe()
   }, []);
   // logout
   const logout = () => {
@@ -89,6 +96,7 @@ const AuthProvider = ({ children }) => {
 
   // update user
   const updateUser = (name, photo) => {
+    setLoading(true)
     updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
@@ -101,6 +109,7 @@ const AuthProvider = ({ children }) => {
     // ...
     // });
   };
+  console.log(loading);
 
   const values = {
     createUserWithEmail,
@@ -108,7 +117,8 @@ const AuthProvider = ({ children }) => {
     githubSignUP,
     user,
     logout,
-    updateUser
+    updateUser, 
+    loading,
 
 
   };
