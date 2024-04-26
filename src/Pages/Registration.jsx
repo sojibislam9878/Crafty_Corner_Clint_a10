@@ -11,7 +11,7 @@ const Registion = () => {
   // navigate
   const navigate = useNavigate();
   const Locations = useLocation();
-  const form = Locations?.state || "/";
+  const form = Locations?.state || "/login";
   const {
     register,
     handleSubmit,
@@ -22,13 +22,14 @@ const Registion = () => {
   const handleHide = () => {
     setIsHide(!isHide);
   };
-  const { createUserWithEmail, updateUser } = useAuth();
+    const { createUserWithEmail, updateUser ,logout } = useAuth();
 
   // create profile and update user
   const onSubmit = (data) => {
     const { email, password, name, photo } = data;
     createUserWithEmail(email, password, toast).then(() => {
       updateUser(name, photo);
+      logout()
       navigate(form);
     });
   };

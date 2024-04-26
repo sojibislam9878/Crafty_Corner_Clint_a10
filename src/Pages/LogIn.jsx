@@ -33,36 +33,42 @@ const Login = () => {
       });
   };
 
-  
-
   const [isHide, setIsHide] = useState(false);
   const handleHide = () => {
     setIsHide(!isHide);
   };
-  
+
   return (
-    <div>
-      <div className="flex justify-center p-4 mt-10">
-        <div className=" rounded-xl p-6  md:w-2/3 xl:w-1/3 mx-auto shadow-xl border-t">
+    <div className="min-h-screen bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500">
+      <div className="flex justify-center items-center p-4 pt-20 ">
+        <div className=" rounded-lg p-6  md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-white relative overflow-hidden">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <h1 className="text-4xl font-bold mt-12">Login Your Account.</h1>
+          <h1 className="text-4xl font-bold mt-12">Login Your Account.</h1>
             <p className="font-medium mt-6 opacity-70">
-              Thank you for get back to Elite Havern, let accesss our the best
+              Thank you for get back to Carfty Corner, let accesss our the best
               recommendation for you
             </p>
-            <input
-              placeholder="Enter Your Email"
-              {...register("email", { required: true })}
-              className="w-full border-b-2 py-4  outline-none mt-10"
-            />
+            <div className=" flex justify-center items-center gap-2 border-b-2">
+              <span className="material-symbols-outlined mt-[42px] text-xl">
+                alternate_email
+              </span>
+              <input
+                placeholder="email"
+                {...register("email", { required: true })}
+                className="w-full py-4  outline-none mt-10"
+              />
+            </div>
             {errors.email && <span className="text-red-600">Enter Email</span>}
             <div className="relative">
-              <input
-                type={isHide ? "text" : "password"}
-                placeholder="Enter Your Password"
-                {...register("password", { required: true })}
-                className="w-full border-b-2 py-4 outline-none mt-6"
-              />
+              <div className=" flex justify-center items-center gap-2 border-b-2">
+                <span className="material-symbols-outlined mt-[25px] text-xl">lock</span>
+                <input
+                  type={isHide ? "text" : "password"}
+                  placeholder="password"
+                  {...register("password", { required: true })}
+                  className="w-full py-4 outline-none mt-6"
+                />
+              </div>
               <p
                 className="absolute right-5 top-11 hover:cursor-pointer"
                 onClick={handleHide}
@@ -85,7 +91,7 @@ const Login = () => {
             <input
               type="submit"
               value="Sign In"
-              className="btn w-full bg-blue-500 text-white text-lg"
+              className="btn w-full bg-blue-500 text-white text-lg "
             />
           </form>
           <p className="text-center mt-6 mb-8 font-medium opacity-80 text-lg">

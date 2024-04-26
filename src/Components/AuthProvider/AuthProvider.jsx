@@ -1,6 +1,6 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import PropTypes from "prop-types";
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 import { auth } from "../../firebase/FirebaseConfig";
 
 export const AuthContext = createContext(null);
@@ -59,10 +59,58 @@ const AuthProvider = ({ children }) => {
   const login = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
+   // social login providers
+
+   const googleProvider = new GoogleAuthProvider();
+   const githubProvider = new GithubAuthProvider();
+ 
+   const googleSignUP = () => {
+     signInWithPopup(auth, googleProvider)
+   };
+   const githubSignUP = () => {
+     signInWithPopup(auth, githubProvider)
+   };
+
+   //   user
+  const [user, setUser] = useState(null);
+  //   check user
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      }
+    });
+  }, []);
+  // logout
+  const logout = () => {
+    setUser(null);
+    signOut(auth);
+  };
+
+  // update user
+  const updateUser = (name, photo) => {
+    updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
+    // .then(() => {
+    // Profile updated!
+    // ...
+    // }).catch((error) => {
+    // An error occurred
+    // ...
+    // });
+  };
 
   const values = {
     createUserWithEmail,
-    login
+    login,googleSignUP,
+    githubSignUP,
+    user,
+    logout,
+    updateUser
+
+
   };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
