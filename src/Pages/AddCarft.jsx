@@ -5,26 +5,32 @@ const AddCarft = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const {user}=useAuth()
   console.log(user);
-  // const {email, displayName}=user
+  const {email, displayName}=user
 
   const onSubmit = (data) => {
     console.log(data);
-    const dataWithAuthorInfo ={...data}
+    
+    const dataWithAuthorInfo ={...data , email, displayName}
     console.log(dataWithAuthorInfo);
     fetch("http://localhost:3000/craftitems", {
         method:"POST", 
         headers:{
             "content-type":"application/json"
         },
-        body:JSON.stringify(data)
+        body:JSON.stringify(dataWithAuthorInfo)
     })
     .then(res=>res.json())
     .then(data=>{
         console.log(data);
+        if (data.insertedId) {
+          console.log("succes");
+          reset()
+        }
     })
   };
   return (

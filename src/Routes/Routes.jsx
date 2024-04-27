@@ -7,6 +7,7 @@ import AllCarft from "../Pages/AllCarft";
 import MyCarft from "../Pages/MyCarft";
 import Home from "../Pages/Home";
 import PrivetRoute from "../Components/PrivetRoute/PrivetRoute";
+import CardDetails from "../Pages/CardDetails";
 
 
 export const router = createBrowserRouter([
@@ -17,7 +18,7 @@ export const router = createBrowserRouter([
         {
           path:"/",
           element:<Home></Home>,
-          loader: ()=>fetch("/data.json")
+          loader: ()=>fetch("http://localhost:3000/craftitems")
         },
         {
           path: "/login",
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
         {
           path: "/mycarft",
           element:<MyCarft></MyCarft>,
+        },
+        {
+          path: "/details/:id",
+          element:<CardDetails></CardDetails>,
         },
       ]
     },
