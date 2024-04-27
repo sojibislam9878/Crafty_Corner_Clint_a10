@@ -2,8 +2,9 @@ import PropTypes from "prop-types";
 import { FaRegStar } from "react-icons/fa";
 import { MdOutlineEdit } from "react-icons/md";
 import { RiDeleteBin2Fill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 const MyCardDetails = ({ item }) => {
-  const { photo, item_name, rating, price, processing_time, customization, stock_status } = item;
+  const { photo, item_name, rating, price, processing_time, customization, stock_status, _id } = item;
   return (
     <div>
       <div className="card card-compact bg-base-100 shadow-xl h-full">
@@ -34,9 +35,11 @@ const MyCardDetails = ({ item }) => {
             Proccessing Time: {processing_time}
           </p>
           <div className=" flex gap-3">
+            <Link to= {`/update/${_id}`}>
             <button className="flex justify-center items-center btn bg-blue-500 text-white hover:bg-blue-700 mt-6">
             <MdOutlineEdit className="text-xl" /> Update Items
             </button>
+            </Link>
             <button className="btn bg-red-500 text-white hover:bg-red-700 mt-6">
             <RiDeleteBin2Fill className="text-xl" /> Delete 
             </button>

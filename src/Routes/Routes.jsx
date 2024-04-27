@@ -8,6 +8,7 @@ import MyCarft from "../Pages/MyCarft";
 import Home from "../Pages/Home";
 import PrivetRoute from "../Components/PrivetRoute/PrivetRoute";
 import CardDetails from "../Pages/CardDetails";
+import UpdateItems from "../Components/UpdateItems";
 
 
 export const router = createBrowserRouter([
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
         {
           path: "/mycarft",
           element:<MyCarft></MyCarft>,
+        },
+        {
+          path: "/update/:id",
+          element:<UpdateItems></UpdateItems>,
         },
         {
           path: "/details/:id",
