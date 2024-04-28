@@ -10,7 +10,7 @@ const CraftItemCard = ({ item }) => {
       <div className="card card-compact bg-base-100 shadow-xl h-full overflow-hidden group ">
         <div className=" ">
           <figure className="relativ overflow-hidden">
-            <img src={photo} alt="Shoes" />
+            <img src={photo} alt="Shoes" className="w-full lg:h-[484px] md:h-[735px] h-[285px] object-cover" />
             <div className="absolute h-1/5 w-full flex items-center justify-center bottom-10 group-hover:bottom-16 opacity-0 group-hover:opacity-100 transition-all duration-300">
               <Link to= {`/details/${_id}`}><button className="btn bg-[#B18B5E] border-none text-white hover:bg-[#34373F]">View Details</button></Link>
             </div>

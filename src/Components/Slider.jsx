@@ -56,7 +56,7 @@ const Slider = () => {
                 data-aos="zoom-in"
                 data-aos-delay="1000"
                 data-aos-duration="2000"
-                className="btn border-none text-white bg-blue-500 mt-14 lg:mb-80 mb-10 hover:bg-blue-700"
+                className="btn border-none text-white bg-[#B18B5E]  mt-14 lg:mb-80 mb-10 hover:bg-[#997851]"
               >
                 Read More
               </button>
@@ -89,7 +89,7 @@ const Slider = () => {
                 data-aos="zoom-in"
                 data-aos-delay="1000"
                 data-aos-duration="2000"
-                className="btn border-none text-white bg-blue-500 mt-14 lg:mb-80 mb-10 hover:bg-blue-700"
+                className="btn border-none text-white bg-[#B18B5E] mt-14 lg:mb-80 mb-10 hover:bg-[#997851]"
               >
                 Read More
               </button>
@@ -122,7 +122,7 @@ const Slider = () => {
                 data-aos="zoom-in"
                 data-aos-delay="1000"
                 data-aos-duration="2000"
-                className="btn border-none text-white bg-blue-500 mt-14 lg:mb-80 mb-10 hover:bg-blue-700"
+                className="btn border-none text-white bg-[#B18B5E] mt-14 lg:mb-80 mb-10 hover:bg-[#997851]"
               >
                 Read More
               </button>

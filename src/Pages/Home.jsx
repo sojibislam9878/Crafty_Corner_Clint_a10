@@ -21,7 +21,7 @@ const Home = () => {
           </p>
         </div>
         {/* cards  */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {
                 craftItems.map(item=><CraftItemCard key={item._id} item={item}></CraftItemCard>)
             }

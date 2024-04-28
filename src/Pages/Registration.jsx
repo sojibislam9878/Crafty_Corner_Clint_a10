@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
-import { Helmet } from "react-helmet";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Registion = () => {
@@ -22,22 +21,19 @@ const Registion = () => {
   const handleHide = () => {
     setIsHide(!isHide);
   };
-    const { createUserWithEmail, updateUser ,logout } = useAuth();
+  const { createUserWithEmail, updateUser, logout } = useAuth();
 
   // create profile and update user
   const onSubmit = (data) => {
     const { email, password, name, photo } = data;
     createUserWithEmail(email, password, toast).then(() => {
       updateUser(name, photo);
-      logout()
+      logout();
       navigate(form);
     });
   };
   return (
     <div className="flex justify-center p-4 pt-10 pb-6 bg-gradient-to-bl from-indigo-500 via-purple-500 to-pink-500">
-      <Helmet>
-        <title>Elite Haven || Registration</title>
-      </Helmet>
       <div className=" rounded-lg p-6 md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-base-100">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1 className="text-4xl font-bold mt-12">Register New Account.</h1>
@@ -45,35 +41,51 @@ const Registion = () => {
             Let get you all set up so you can verify your personal account and
             begin settion up your profile
           </p>
-          <input
-            placeholder="Enter Your Full Name"
-            {...register("name", { required: true })}
-            className="w-full border-b-2 py-4  outline-none mt-10 bg-base-100"
-          />
+          <div className="flex justify-center items-center gap-2 border-b-2">
+            <span className="material-symbols-outlined mt-10 text-2xl">
+              account_circle
+            </span>
+            <input
+              placeholder="Full Name"
+              {...register("name", { required: true })}
+              className="w-full py-4  outline-none mt-10 bg-base-100"
+            />
+          </div>
           {errors.name && (
             <span className="text-red-600">Enter Your Full Name</span>
           )}
-          <input
-            placeholder="Enter Your Photo URL"
-            {...register("photo", { required: true })}
-            className="w-full border-b-2 py-4  outline-none mt-6 bg-base-100"
-          />
+          <div className="flex justify-center items-center gap-2 border-b-2">
+            <span className="material-symbols-outlined mt-6">image</span>
+            <input
+              placeholder="Your Photo URL"
+              {...register("photo", { required: true })}
+              className="w-full py-4  outline-none mt-6 bg-base-100"
+            />
+          </div>
           {errors.photo && (
             <span className="text-red-600">Give Your Photo URL</span>
           )}
+          <div className="flex justify-center items-center gap-2 border-b-2">
+          <span className="material-symbols-outlined mt-6 text-2xl">
+                alternate_email
+              </span>
           <input
-            placeholder="Enter Your Email"
+            placeholder="Your Email"
             {...register("email", { required: true })}
-            className="w-full border-b-2 py-4  outline-none mt-6 bg-base-100"
+            className="w-full py-4  outline-none mt-6 bg-base-100"
           />
+          </div>
           {errors.email && <span className="text-red-600">Enter Email</span>}
           <div className="relative">
+            <div  className="flex justify-center items-center gap-2 border-b-2">
+            <span className="material-symbols-outlined mt-6 text-2xl">lock</span>
             <input
               type={isHide ? "text" : "password"}
-              placeholder="Enter Your Password"
+              placeholder="Your Password"
               {...register("password", { required: true })}
-              className="w-full border-b-2 py-4 outline-none mt-6 bg-base-100"
+              className="w-full py-4 outline-none mt-6 bg-base-100"
             />
+            </div>
             <p
               className="absolute right-5 top-11 hover:cursor-pointer"
               onClick={handleHide}
