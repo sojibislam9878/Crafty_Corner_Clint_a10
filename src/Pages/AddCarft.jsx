@@ -183,7 +183,7 @@ const AddCarft = () => {
         </div>
         <input
           type="submit"
-          value="Add New Item"
+          value="Add"
           className="border w-full btn mt-6 text-lg font-bold"
         />
       </form>

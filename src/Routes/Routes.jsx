@@ -51,7 +51,7 @@ export const router = createBrowserRouter([
         },
         {
           path: "/details/:id",
-          element:<CardDetails></CardDetails>,
+          element:<PrivetRoute><CardDetails></CardDetails></PrivetRoute>,
         },
       ]
     },

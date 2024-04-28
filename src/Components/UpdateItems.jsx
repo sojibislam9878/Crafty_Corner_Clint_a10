@@ -210,7 +210,7 @@ const UpdateItems = () => {
             </div>
             <input
               type="submit"
-              value="Update Item"
+              value="Update"
               className="border w-full btn mt-6 text-lg font-bold"
             />
           </form>

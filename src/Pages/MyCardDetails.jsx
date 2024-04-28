@@ -6,7 +6,7 @@ import { RiDeleteBin2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 const MyCardDetails = ({ item , reRender, setReRender }) => {
-  const { photo, item_name, rating, price, processing_time, customization, stock_status, _id } = item;
+  const { photo, item_name, rating, price, customization, stock_status, _id } = item;
 
   const handleDelete=_id=>{
     console.log(_id);
@@ -52,28 +52,24 @@ const MyCardDetails = ({ item , reRender, setReRender }) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="text-4xl font-bold mt-4 font-garamond bg-gradient-to-r from-[#4facfe] to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold mt-4 font-garamond bg-gradient-to-r from-[#B18B5E] to-[#d6aa76] bg-clip-text text-transparent">
             {item_name}
           </h2>
           
           <div className="flex">
-            <p className="text-lg font-medium opacity-70">$ {price}</p>
+            <p className="text-lg font-medium opacity-70">{price} $</p>
             <p className="text-lg font-medium opacity-70 flex items-center gap-2">
               {rating} <FaRegStar />
             </p>
           </div>
-          <div className="flex flex-wrap gap-3">
-          <p className="text-lg opacity-70 font-medium">customization : {customization}</p>
-          <p className="text-lg opacity-70 font-medium">Stuck Status : {stock_status}</p>
+          <div className="">
+          <p className="text-lg opacity-70"><span className=" font-medium">customization :</span> <span className="opacity-60">{customization}</span></p>
+          <p className="text-lg opacity-70 "><span className="font-medium">Stuck Status :</span> <span className="opacity-60">{stock_status}</span></p>
           </div>
-          
-          <p className="text-lg font-medium opacity-70 flex items-center gap-2">
-            Proccessing Time: {processing_time}
-          </p>
           <div className=" flex gap-3">
             <Link to= {`/update/${_id}`}>
             <button className="flex justify-center items-center btn bg-blue-500 text-white hover:bg-blue-700 mt-6">
-            <MdOutlineEdit className="text-xl" /> Update Items
+            <MdOutlineEdit className="text-xl" /> Update
             </button>
             </Link>
             <button onClick={()=>handleDelete(_id)} className="btn bg-red-500 text-white hover:bg-red-700 mt-6">
