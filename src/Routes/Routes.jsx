@@ -9,12 +9,14 @@ import Home from "../Pages/Home";
 import PrivetRoute from "../Components/PrivetRoute/PrivetRoute";
 import CardDetails from "../Pages/CardDetails";
 import UpdateItems from "../Components/UpdateItems";
+import ErrorPage from "../Pages/ErrorPage";
 
 
 export const router = createBrowserRouter([
     {
       path: "/",
       element:<Root></Root>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
           path:"/",

@@ -49,7 +49,7 @@ const Login = () => {
               recommendation for you
             </p>
             <div className=" flex justify-center items-center gap-2 border-b-2">
-              <span className="material-symbols-outlined mt-[42px] text-xl">
+              <span className="material-symbols-outlined mt-10 text-2xl">
                 alternate_email
               </span>
               <input
@@ -61,7 +61,7 @@ const Login = () => {
             {errors.email && <span className="text-red-600">Enter Email</span>}
             <div className="relative">
               <div className=" flex justify-center items-center gap-2 border-b-2">
-                <span className="material-symbols-outlined mt-[25px] text-xl">lock</span>
+                <span className="material-symbols-outlined mt-6 text-2xl">lock</span>
                 <input
                   type={isHide ? "text" : "password"}
                   placeholder="password"
