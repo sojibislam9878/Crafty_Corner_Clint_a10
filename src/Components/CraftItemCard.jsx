@@ -7,7 +7,7 @@ const CraftItemCard = ({ item }) => {
   const oldPrice = parseFloat(price)+100
   return (
     <div>
-      <div className="card card-compact bg-base-100 shadow-xl h-full overflow-hidden group ">
+      <div className="card card-compact bg-base-200 shadow-xl h-full overflow-hidden group ">
         <div className=" ">
           <figure className="relativ overflow-hidden">
             <img src={photo} alt="Shoes" className="w-full lg:h-[484px] md:h-[735px] h-[285px] object-cover" />
@@ -29,7 +29,7 @@ const CraftItemCard = ({ item }) => {
           </figure>
         </div>
         <div className="card-body">
-          <h2 className="card-title flex justify-center">{item_name}</h2>
+          <h2 className="card-title flex justify-center font-garamond text-3xl">{item_name}</h2>
           <p className="text-center text-[#B18B5E] text-xl font-bold">${price} - <del className="text-gray-500 opacity-50">{oldPrice}</del></p>
         </div>
       </div>

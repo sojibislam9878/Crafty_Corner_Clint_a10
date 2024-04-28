@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.font-garamond {
+    font-family: "EB Garamond", serif;
+}

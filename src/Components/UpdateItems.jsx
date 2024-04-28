@@ -58,7 +58,7 @@ const UpdateItems = () => {
       };
       return (
 
-        <div className="container mx-auto p-4 bg-base-300 md:mt-10 rounded-lg shadow-xl">
+        <div className="container mx-auto p-4 bg-base-300 md:mt-10 mb-28 rounded-lg shadow-xl">
           {/* section header  */}
           <div className="text-center">
             <h1 className='text-4xl font-extrabold mt-6'>Wanna Update {item_name} details ?</h1>

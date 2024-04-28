@@ -85,7 +85,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost text-3xl font-garamond">
+          <Link to="/" className="btn btn-ghost text-3xl font-garamond text-[#B18B5E]">
             Crafty Corner
           </Link>
         </div>

@@ -33,7 +33,7 @@ const Registion = () => {
     });
   };
   return (
-    <div className="flex justify-center p-4 pt-10 pb-6 bg-gradient-to-bl from-indigo-500 via-purple-500 to-pink-500">
+    <div className="flex justify-center p-4 pt-10 pb-16 bg-gradient-to-bl from-indigo-500 via-purple-500 to-pink-500">
       <div className=" rounded-lg p-6 md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-base-100">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1 className="text-4xl font-bold mt-12">Register New Account.</h1>
@@ -57,6 +57,7 @@ const Registion = () => {
           <div className="flex justify-center items-center gap-2 border-b-2">
             <span className="material-symbols-outlined mt-6">image</span>
             <input
+            type="url"
               placeholder="Your Photo URL"
               {...register("photo", { required: true })}
               className="w-full py-4  outline-none mt-6 bg-base-100"
@@ -70,6 +71,7 @@ const Registion = () => {
                 alternate_email
               </span>
           <input
+          type="email"
             placeholder="Your Email"
             {...register("email", { required: true })}
             className="w-full py-4  outline-none mt-6 bg-base-100"

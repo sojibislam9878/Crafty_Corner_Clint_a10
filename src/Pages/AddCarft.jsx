@@ -42,7 +42,7 @@ const AddCarft = () => {
       });
   };
   return (
-    <div className="container mx-auto p-4 bg-base-300 md:mt-10 rounded-lg shadow-xl">
+    <div className="container mb-28 mx-auto p-4 bg-base-300 md:mt-10 rounded-lg shadow-xl">
       {/* section header  */}
       <div className="text-center">
         <h1 className="text-4xl font-extrabold mt-6">Add a new Item</h1>

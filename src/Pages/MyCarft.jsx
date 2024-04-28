@@ -27,6 +27,9 @@ const MyCarft = () => {
 
   const filter=(e)=>{
       const value = e.target.value
+      if (!value) {
+        return
+      }
 
       fetch(`http://localhost:3000/craftitems?customization=${value}&&email=${user.email}`)
       .then(res=>res.json())
@@ -41,10 +44,11 @@ const MyCarft = () => {
 //       console.log(e.target.value);
 //   }
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex justify-center items-center mt-3">
-        <p> </p>
-        <select onClick={filter} className="px-6 py-3 border bg-base-200 rounded-xl text-xl font-semibold">
+    <div className="container mx-auto p-4 mb-28">
+      <div className="flex flex-col justify-center items-center mt-3">
+        <p className="font-semibold text-xl text-center">Filter Items according ❛customization❜ </p>
+        <select onClick={filter} className="px-6 py-3 mt-4 border bg-base-200 rounded-xl text-xl font-semibold">
+        <option value="" selected>Select</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select>
