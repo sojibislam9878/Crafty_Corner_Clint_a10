@@ -3,11 +3,13 @@ import { useParams } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
+import Spinner from "../Components/Spinner";
 
 const CardDetails = () => {
   const { id } = useParams();
   console.log(id);
   const [card, setCard] = useState({});
+  const [sppinng, setSpinng] =useState(true)
 
   useEffect(() => {
     fetch(`http://localhost:3000/singleCard/${id}`)
@@ -15,6 +17,7 @@ const CardDetails = () => {
       .then((data) => {
         console.log(data);
         setCard(data);
+        setSpinng(false)
       });
   }, [id]);
   const {
@@ -27,6 +30,9 @@ const CardDetails = () => {
     processing_time,
     stock_status,
   } = card;
+  if (sppinng) {
+    return <Spinner></Spinner>
+  }
 
 
   return (
