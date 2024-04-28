@@ -15,7 +15,6 @@ const MyCarft = () => {
     },[user])
     return (
         <div className="container mx-auto p-4">
-            <h1>my carft {myItems.length}</h1>
             <div className="grid lg:grid-cols-3 gap-6 mt-14">
             {
                 myItems.map(item=><MyCardDetails key={item._id} item={item}></MyCardDetails>)

@@ -5,11 +5,9 @@ import { useEffect, useState } from 'react';
 
 const UpdateItems = () => {
     const {user}=useAuth()
-      console.log(user);
     const [craftItems, setCraftItems]=useState({})
 
     const {id}= useParams()
-    console.log(id);
     useEffect(()=>{
         fetch(`http://localhost:3000/singleCard/${id}`)
         .then(res=>res.json())
@@ -17,38 +15,38 @@ const UpdateItems = () => {
             console.log(data);
             setCraftItems(data)
         })
-    },[user, id])
-    console.log(craftItems);
-    const {photo, item_name, rating, price, processing_time, customization, stock_status, _id , subcategory_name , short_description}=craftItems
+    },[user, id]) 
+
+    const {photo, item_name, rating, price, processing_time, customization, stock_status, subcategory_name , short_description}=craftItems
     const {
         register,
         handleSubmit,
-        // reset,
+        reset,
         formState: { errors },
       } = useForm();
       
-      const {email, displayName}=user
+      const {email, displayName}=user || {}
     
       const onSubmit = (data) => {
         console.log(data);
         
-        const dataWithAuthorInfo ={...data , email, displayName}
-        console.log(dataWithAuthorInfo);
-        // fetch("http://localhost:3000/craftitems", {
-        //     method:"POST", 
-        //     headers:{
-        //         "content-type":"application/json"
-        //     },
-        //     body:JSON.stringify(dataWithAuthorInfo)
-        // })
-        // .then(res=>res.json())
-        // .then(data=>{
-        //     console.log(data);
-        //     if (data.insertedId) {
-        //       console.log("succes");
-        //       reset()
-        //     }
-        // })
+        const updatedDataWithAuthorInfo ={...data , email, displayName}
+        console.log(updatedDataWithAuthorInfo);
+        fetch(`http://localhost:3000/updateCard/${id}`, {
+            method:"PUT", 
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(updatedDataWithAuthorInfo)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if (data.insertedId) {
+              console.log("succes");
+              reset()
+            }
+        })
       };
       return (
         <div className="container mx-auto p-4 bg-base-300 mt-32 rounded-lg shadow-xl">
@@ -67,12 +65,13 @@ const UpdateItems = () => {
                 <input
                   type="text"
                   defaultValue={item_name}
+                  required
                   placeholder="Item Name"
                   {...register("item_name", { required: true })}
                   className=" py-4 w-full  rounded-lg mt-3 px-4 outline-none bg-base-100"
                 />
                 {errors.item_name && (
-                  <span className="text-red-600">Enter item name</span>
+                  <span className="text-red-600">Give a Update Value</span>
                 )}
               </div>
               <div>
@@ -82,7 +81,8 @@ const UpdateItems = () => {
                   type="text"
                   placeholder="Subcategory Name"
                   defaultValue={subcategory_name }
-                  {...register("subcategory_name", { required: true })}
+                  required
+                  {...register("subcategory_name",{ required: true })}
                   className=" py-4 w-full  rounded-lg mt-3 px-4 outline-none bg-base-100"
                 />
                 <datalist id="subcategory">
@@ -94,7 +94,7 @@ const UpdateItems = () => {
                   <option value="Beaded Sculpture"></option>
                 </datalist>
                 {errors.subcategory_name && (
-                  <span className="text-red-600">Select a subcategory</span>
+                  <span className="text-red-600">Give a Update Value</span>
                 )}
               </div>
               <div>
@@ -107,7 +107,7 @@ const UpdateItems = () => {
                   className=" py-4 w-full  rounded-lg mt-3 px-4 outline-none bg-base-100"
                 />
                 {errors.short_description && (
-                  <span className="text-red-600">Write a short description</span>
+                  <span className="text-red-600">Give a Update Value</span>
                 )}
               </div>
               <div>
@@ -119,7 +119,7 @@ const UpdateItems = () => {
                   {...register("price", { required: true })}
                   className=" py-4 w-full  rounded-lg mt-3 px-4 outline-none bg-base-100"
                 />
-                {errors.price && <span className="text-red-600">Enter price</span>}
+                {errors.price && <span className="text-red-600">Give a Update Value</span>}
               </div>
               <div>
                 <p>Rating :</p>
@@ -131,7 +131,7 @@ const UpdateItems = () => {
                   className=" py-4 w-full  rounded-lg mt-3 px-4 outline-none bg-base-100"
                 />
                 {errors.rating && (
-                  <span className="text-red-600">Give a default rating</span>
+                  <span className="text-red-600">Give a Update Value</span>
                 )}
               </div>
               <div>
@@ -144,7 +144,7 @@ const UpdateItems = () => {
                   className=" py-4 w-full  rounded-lg mt-3 px-4 outline-none bg-base-100"
                 />
                 {errors.customization && (
-                  <span className="text-red-600">Write Yes or No</span>
+                  <span className="text-red-600">Give a Update Value</span>
                 )}
               </div>
               <div>
@@ -157,7 +157,7 @@ const UpdateItems = () => {
                   className=" py-4 w-full  rounded-lg mt-3 px-4 outline-none bg-base-100"
                 />
                 {errors.processing_time && (
-                  <span className="text-red-600">Processing time</span>
+                  <span className="text-red-600">Give a Update Value</span>
                 )}
               </div>
               <div>
@@ -175,7 +175,7 @@ const UpdateItems = () => {
                   <option value="Made to order"></option>
                 </datalist>
                 {errors.stock_status && (
-                  <span className="text-red-600">Select one</span>
+                  <span className="text-red-600">Give a Update Value</span>
                 )}
               </div>
               {/* <input type="text" className=" border" />
@@ -196,7 +196,7 @@ const UpdateItems = () => {
                 className=" py-4 w-full  rounded-lg mt-3 px-4 outline-none bg-base-100"
               />
               {errors.photo && (
-                <span className="text-red-600">give a photo url</span>
+                <span className="text-red-600">Give a Update Value</span>
               )}
             </div>
             <input

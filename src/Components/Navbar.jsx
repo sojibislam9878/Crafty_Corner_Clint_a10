@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const Navbar = () => {
   const { user, logout } = useAuth();
   const normalLink = "lg:font-bold lg:text-lg lg:mr-2 mt-2 lg:mt-0";
-  const activeLink = `bg-gradient-to-r from-[#4facfe] to-blue-500 border border-blure-500 text-white border-none hover:bg-transparent focus:bg-transparent focus:text-white ${normalLink}`;
+  const activeLink = `bg-gradient-to-r from-[#B18B5E] to-[#d6aa76] border border-blure-500 text-white border-none hover:bg-transparent focus:bg-transparent focus:text-white ${normalLink}`;
   const [theme, setTheme]=useState("light")
   const handleTheme =(e)=>{
     if (e.target.checked) {
@@ -186,7 +186,7 @@ const Navbar = () => {
               </div>
               <button
                 onClick={logout}
-                className="btn bg-blue-500 text-white font-bold hover:bg-blue-700 hidden md:flex"
+                className="btn bg-[#B18B5E] text-white font-bold hover:bg-[#997851] hidden md:flex"
               >
                 Logout
               </button>
@@ -194,12 +194,12 @@ const Navbar = () => {
           ) : (
             <div>
               <Link to="/login">
-                <button className="btn bg-blue-500 text-white font-bold hover:bg-blue-700">
+                <button className="btn bg-[#B18B5E] text-white font-bold hover:bg-[#997851]">
                   Login
                 </button>
               </Link>
               <Link to="/registration">
-                <button className="btn bg-blue-500 text-white font-bold hover:bg-blue-700">
+                <button className="btn bg-[#B18B5E] text-white font-bold hover:bg-[#997851]">
                   Register
                 </button>
               </Link>

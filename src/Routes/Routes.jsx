@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
         },
         {
           path: "/mycarft",
-          element:<MyCarft></MyCarft>,
+          element:<PrivetRoute><MyCarft></MyCarft></PrivetRoute>,
         },
         {
           path: "/update/:id",

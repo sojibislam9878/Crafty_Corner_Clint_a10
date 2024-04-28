@@ -151,11 +151,11 @@ const CardDetails = () => {
           </h6>
         </div>
         <div className=" pb-5 mt-7">
-          <button className="bg-slate-100 p-5 w-full rounded-lg text-green-400 font-medium flex justify-center items-center gap-3">
+          <button className="bg-[#34373F] hover:bg-[#B18B5E] transition-all duration-300 p-5 w-full rounded-lg text-white font-medium flex justify-center items-center gap-3">
             <span className="material-symbols-outlined">shopping_cart</span>
             <span>Add Cart</span>
           </button>
-          <button className="bg-slate-100 p-5 mt-3 w-full rounded-lg text-green-400 font-medium flex justify-center items-center gap-3">
+          <button className="bg-[#B18B5E] hover:bg-[#34373F] transition-all duration-300 p-5 mt-3 w-full rounded-lg text-white font-medium flex justify-center items-center gap-3">
             <span className="material-symbols-outlined">shopping_bag</span>
             <span>Buy Now</span>
           </button>
@@ -175,18 +175,6 @@ const CardDetails = () => {
               <td className="font-medium">{stock_status}</td>
             </tr>
           </table>
-          <div className="mt-8">
-            <button
-              className="btn bg-transparent border-2 mr-6"
-            >
-              Read
-            </button>
-            <button
-              className="btn bg-[#50B1C9] text-white"
-            >
-              wish list
-            </button>
-          </div>
         </div>
       </div>
     </div>
