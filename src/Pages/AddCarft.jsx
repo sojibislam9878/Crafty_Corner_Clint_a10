@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import useAuth from "../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const AddCarft = () => {
   const {
@@ -30,6 +31,13 @@ const AddCarft = () => {
         if (data.insertedId) {
           console.log("succes");
           reset()
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Item Add Successfully",
+            showConfirmButton: false,
+            timer: 1500
+          });
         }
     })
   };

@@ -4,19 +4,41 @@ import { FaRegStar } from "react-icons/fa";
 import { MdOutlineEdit } from "react-icons/md";
 import { RiDeleteBin2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-const MyCardDetails = ({ item }) => {
+import Swal from "sweetalert2";
+const MyCardDetails = ({ item , reRender, setReRender }) => {
   const { photo, item_name, rating, price, processing_time, customization, stock_status, _id } = item;
 
   const handleDelete=_id=>{
     console.log(_id);
-    fetch(`http://localhost:3000/craftitems/${_id}`, {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:3000/craftitems/${_id}`, {
       method:"DELETE"
     })
     .then(res=>res.json())
     .then(data=>{
       console.log(data);
-      location.reload()
+      if (data.deletedCount) {
+        Swal.fire({
+          title: "Deleted!",
+          text: "Items has been deleted.",
+          icon: "success"
+        });
+        // location.reload()
+        setReRender(!reRender)
+      }
     })
+      }
+    });
+    
   }
 
   return (
@@ -24,7 +46,7 @@ const MyCardDetails = ({ item }) => {
       <div className="card card-compact bg-base-100 shadow-xl h-full">
         <figure>
           <img
-            className="transition duration-300 hover:scale-105"
+            className="w-full lg:h-[484px] md:h-[735px] h-[285px] object-cover  transition duration-300 hover:scale-105"
             src={photo}
             alt="Shoes"
           />
@@ -65,5 +87,7 @@ const MyCardDetails = ({ item }) => {
 };
 MyCardDetails.propTypes = {
     item: PropTypes.object,
+    reRender: PropTypes.bool,
+    setReRender: PropTypes.func,
   };
 export default MyCardDetails;

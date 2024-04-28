@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import useAuth from '../Hooks/useAuth';
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 
 const UpdateItems = () => {
     const {user}=useAuth()
@@ -29,7 +30,6 @@ const UpdateItems = () => {
     
       const onSubmit = (data) => {
         console.log(data);
-        
         const updatedDataWithAuthorInfo ={...data , email, displayName}
         console.log(updatedDataWithAuthorInfo);
         fetch(`http://localhost:3000/updateCard/${id}`, {
@@ -42,13 +42,22 @@ const UpdateItems = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
-            if (data.insertedId) {
+            if (data.modifiedCount) {
               console.log("succes");
               reset()
+              Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "Item Update Success",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              
             }
         })
       };
       return (
+
         <div className="container mx-auto p-4 bg-base-300 mt-32 rounded-lg shadow-xl">
           {/* section header  */}
           <div className="text-center">

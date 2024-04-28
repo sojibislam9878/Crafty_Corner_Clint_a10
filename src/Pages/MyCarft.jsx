@@ -6,6 +6,7 @@ import Spinner from "../Components/Spinner";
 
 const MyCarft = () => {
     const [myItems, setMyItems]=useState([])
+    const [reRender, setReRender]=useState(false)
     const [sppinng, setSpinng] =useState(true)
     const {user}=useAuth()
     useEffect(()=>{
@@ -16,9 +17,10 @@ const MyCarft = () => {
             setMyItems(data)
             setSpinng(false)
         })
-    },[user])
+    },[user, reRender])
     if (sppinng) {
         return <Spinner></Spinner>
+        
       }
     if (myItems.length === 0) {
         return <NoData></NoData>
@@ -27,7 +29,7 @@ const MyCarft = () => {
         <div className="container mx-auto p-4">
             <div className="grid lg:grid-cols-3 gap-6 mt-14">
             {
-                myItems.map(item=><MyCardDetails key={item._id} item={item}></MyCardDetails>)
+                myItems.map(item=><MyCardDetails key={item._id} item={item} reRender={reRender} setReRender={setReRender}></MyCardDetails>)
             }
             </div>
         </div>

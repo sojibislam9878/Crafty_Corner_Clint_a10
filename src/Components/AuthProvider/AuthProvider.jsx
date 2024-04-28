@@ -111,6 +111,9 @@ const AuthProvider = ({ children }) => {
   };
   console.log(loading);
 
+
+  
+
   const values = {
     createUserWithEmail,
     login,googleSignUP,
