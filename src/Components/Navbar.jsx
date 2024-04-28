@@ -1,12 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
   const normalLink = "lg:font-bold lg:text-lg lg:mr-2 mt-2 lg:mt-0";
   const activeLink = `bg-gradient-to-r from-[#B18B5E] to-[#d6aa76] border border-blure-500 text-white border-none hover:bg-transparent focus:bg-transparent focus:text-white ${normalLink}`;
   const [theme, setTheme]=useState("light")
+
   const handleTheme =(e)=>{
     if (e.target.checked) {
       setTheme("dark")
@@ -14,10 +15,8 @@ const Navbar = () => {
       setTheme("light")
     }
   }
-  console.log(theme);
-  useEffect(()=>{
+
     document.querySelector("html").setAttribute("data-theme", theme)
-  },[theme])
   return (
     <div className="sticky top-0 z-40 bg-base-100 shadow-xl">
       <div className="navbar bg-base-100 container mx-auto p-4 ">
