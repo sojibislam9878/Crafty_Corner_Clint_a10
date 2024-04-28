@@ -3,6 +3,8 @@ import Slider from "../Components/Slider";
 import { useLoaderData } from "react-router-dom";
 import CraftItemCard from "../Components/CraftItemCard";
 import CategoryItems from "../Components/CategoryItems";
+import FAQSection from "../Components/FAQSection";
+import Contact from "../Components/Contact";
 
 const Home = () => {
   const { user } = useAuth();
@@ -31,6 +33,8 @@ const Home = () => {
         </div>
       </div>
       <CategoryItems></CategoryItems>
+      <FAQSection></FAQSection>
+      <Contact></Contact>
     </div>
   );
 };
