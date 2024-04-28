@@ -2,11 +2,13 @@ import useAuth from "../Hooks/useAuth";
 import Slider from "../Components/Slider";
 import { useLoaderData } from "react-router-dom";
 import CraftItemCard from "../Components/CraftItemCard";
+import CategoryItems from "../Components/CategoryItems";
 
 const Home = () => {
   const { user } = useAuth();
   console.log(user);
-  const craftItems = useLoaderData();
+  const allCraftItems = useLoaderData();
+  const craftItems = allCraftItems.slice(0,6)
   console.log(craftItems);
   return (
     <div>
@@ -28,6 +30,7 @@ const Home = () => {
           
         </div>
       </div>
+      <CategoryItems></CategoryItems>
     </div>
   );
 };

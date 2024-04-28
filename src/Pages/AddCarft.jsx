@@ -9,37 +9,37 @@ const AddCarft = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const {user}=useAuth()
+  const { user } = useAuth();
   console.log(user);
-  const {email, displayName}=user
+  const { email, displayName } = user;
 
   const onSubmit = (data) => {
     console.log(data);
-    
-    const dataWithAuthorInfo ={...data , email, displayName}
+
+    const dataWithAuthorInfo = { ...data, email, displayName };
     console.log(dataWithAuthorInfo);
     fetch("http://localhost:3000/craftitems", {
-        method:"POST", 
-        headers:{
-            "content-type":"application/json"
-        },
-        body:JSON.stringify(dataWithAuthorInfo)
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(dataWithAuthorInfo),
     })
-    .then(res=>res.json())
-    .then(data=>{
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
         if (data.insertedId) {
           console.log("succes");
-          reset()
+          reset();
           Swal.fire({
             position: "top-center",
             icon: "success",
             title: "Item Add Successfully",
             showConfirmButton: false,
-            timer: 1500
+            timer: 1500,
           });
         }
-    })
+      });
   };
   return (
     <div className="container mx-auto p-4 bg-base-300 md:mt-10 rounded-lg shadow-xl">
@@ -53,7 +53,7 @@ const AddCarft = () => {
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className=" pb-16 pt-10 md:px-28">
         <div className="md:grid grid-cols-2 gap-6">
-          <div >
+          <div>
             <p className="font-bold opacity-70">Item Name :</p>
             <input
               type="text"
@@ -161,13 +161,15 @@ const AddCarft = () => {
               <span className="text-red-600">Select one</span>
             )}
           </div>
-          {/* <input type="text" className=" border" />
-                <input type="text" className=" border" />
-                <input type="text" className=" border" />
-                <input type="text" className=" border" />
-                <input type="text" className=" border" />
-                <input type="text" className=" border" />
-                <input type="text" className=" border" /> */}
+          <div className="mt-4 md:mt-0">
+          <p className="font-bold opacity-70">User email :</p>
+            <input type="text" defaultValue={email} readOnly className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100" />
+          </div>
+          <div className="mt-4 md:mt-0">
+          <p className="font-bold opacity-70">User name :</p>
+            <input type="text" defaultValue={displayName} readOnly className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100" />
+          </div>
+
         </div>
         <div className="mt-6">
           <p className="font-bold opacity-70">Photo URL :</p>

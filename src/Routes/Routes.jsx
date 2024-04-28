@@ -40,6 +40,7 @@ export const router = createBrowserRouter([
         {
           path: "/allcarft",
           element:<AllCarft></AllCarft>,
+          loader: ()=>fetch("http://localhost:3000/craftitems")
         },
         {
           path: "/mycarft",
