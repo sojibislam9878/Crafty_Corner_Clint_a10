@@ -10,6 +10,7 @@ import PrivetRoute from "../Components/PrivetRoute/PrivetRoute";
 import CardDetails from "../Pages/CardDetails";
 import UpdateItems from "../Components/UpdateItems";
 import ErrorPage from "../Pages/ErrorPage";
+import AllCategory from "../Components/AllCategory";
 
 
 export const router = createBrowserRouter([
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
         {
           path: "/mycarft",
           element:<PrivetRoute><MyCarft></MyCarft></PrivetRoute>,
+        },
+        {
+          path: "/allcategory",
+          element:<AllCategory/>,
         },
         {
           path: "/update/:id",

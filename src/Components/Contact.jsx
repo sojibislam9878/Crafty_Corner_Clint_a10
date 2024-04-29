@@ -40,7 +40,7 @@ const Contact = () => {
           />
         </div>
         <textarea
-          className=" w-full mt-3 h-28 p-2"
+          className=" w-full bg-base-100 rounded-lg mt-3 h-28 p-2"
           placeholder="Your messages"
         ></textarea>
         <button className="btn bg-[#B18B5E] text-white"> Submit</button>

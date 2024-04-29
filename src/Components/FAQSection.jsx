@@ -21,61 +21,57 @@ const FAQSection = () => {
             <div className="collapse collapse-plus bg-base-200 md:mt-16 mt-8">
               <input type="radio" name="my-accordion-3" defaultChecked />
               <div className="collapse-title text-xl font-medium">
-                How do I schedule a viewing?
+              What types of sculptures do you offer?
               </div>
               <div className="collapse-content">
                 <p>
                   {" "}
-                  Simply fill out our online form or call our concierge service.
+                  We offer figurative, abstract, contemporary, and traditional sculptures crafted from materials such as clay, wood, metal, and resin.
                 </p>
               </div>
             </div>
             <div className="collapse collapse-plus bg-base-200 mt-1 ">
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">
-                Are the properties furnished?
+              Do you provide custom sculpting services?
               </div>
               <div className="collapse-content">
                 <p>
-                  Our properties can be furnished upon request for an additional
-                  fee.
+                Yes, we offer personalized sculpting services for portraits, decor pieces, and commemorative statues.
                 </p>
               </div>
             </div>
             <div className="collapse collapse-plus bg-base-200 mt-1">
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">
-                Do you offer financing options?
+              What modeling materials and tools do you sell?
               </div>
               <div className="collapse-content">
                 <p>
-                  Yes, we work with trusted financial partners to offer flexible
-                  financing solutions.
+                Our inventory includes clay, wax, plaster, polymer clay, sculpting tools, armatures, brushes, and accessories.
                 </p>
               </div>
             </div>
             <div className="collapse collapse-plus bg-base-200 mt-1">
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">
-                Can I list my property with Luxury Estates?
+              How do I care for and maintain sculptures?
               </div>
               <div className="collapse-content">
                 <p>
                   {" "}
-                  Absolutely, contact us to discuss listing your property with
-                  our exclusive network.
+                  Keep sculptures away from sunlight, moisture, and extreme temperatures; dust regularly with a soft, dry cloth and clean with mild detergent as needed.
                 </p>
               </div>
             </div>
             <div className="collapse collapse-plus bg-base-200 mt-1">
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">
-                Are there property management services available?
+              What shipping options do you offer?
               </div>
               <div className="collapse-content">
                 <p>
-                  Yes, we provide comprehensive property management services to
-                  ensure peace of mind.
+                We provide standard, expedited, and international shipping with reliable carriers, along with tracking information for order monitoring.
                 </p>
               </div>
             </div>

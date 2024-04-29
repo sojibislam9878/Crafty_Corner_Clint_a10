@@ -31,7 +31,7 @@ const MyCarft = () => {
         return
       }
 
-      fetch(`http://localhost:3000/craftitems?customization=${value}&&email=${user.email}`)
+      fetch(`http://localhost:3000/filtercraftItems?customization=${value}&&email=${user.email}`)
       .then(res=>res.json())
       .then(data=>{
           console.log(data);
