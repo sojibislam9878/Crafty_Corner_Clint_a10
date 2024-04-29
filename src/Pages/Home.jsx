@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div>
       <Slider></Slider>
-      <div className="container mx-auto p-4 mt-28">
+      <div className="container mx-auto p-4 mt-28 mb-16">
         {/* section header  */}
         <div className="text-center">
         <h1 className="text-4xl font-extrabold mt-6 font-garamond">Craft Item section</h1>

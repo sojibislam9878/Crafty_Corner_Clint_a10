@@ -18,7 +18,7 @@ const AddCarft = () => {
 
     const dataWithAuthorInfo = { ...data, email, displayName };
     console.log(dataWithAuthorInfo);
-    fetch("http://localhost:3000/craftitems", {
+    fetch("https://assigenment10.vercel.app/craftitems", {
       method: "POST",
       headers: {
         "content-type": "application/json",

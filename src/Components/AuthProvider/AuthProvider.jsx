@@ -111,6 +111,9 @@ const AuthProvider = ({ children }) => {
   };
   console.log(loading);
 
+  const [subCategory, setSubCategory]=useState('')
+
+
 
   
 
@@ -122,6 +125,8 @@ const AuthProvider = ({ children }) => {
     logout,
     updateUser, 
     loading,
+    subCategory, 
+    setSubCategory
 
 
   };

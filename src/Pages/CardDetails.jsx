@@ -12,7 +12,7 @@ const CardDetails = () => {
   const [sppinng, setSpinng] =useState(true)
 
   useEffect(() => {
-    fetch(`http://localhost:3000/singleCard/${id}`)
+    fetch(`https://assigenment10.vercel.app/singleCard/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

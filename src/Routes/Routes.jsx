@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
         {
           path:"/",
           element:<Home></Home>,
-          loader: ()=>fetch("http://localhost:3000/craftitems")
+          loader: ()=>fetch("https://assigenment10.vercel.app/craftItems")
         },
         {
           path: "/login",
@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
         {
           path: "/allcarft",
           element:<AllCarft></AllCarft>,
-          loader: ()=>fetch("http://localhost:3000/craftitems")
+          loader: ()=>fetch("https://assigenment10.vercel.app/craftitems")
         },
         {
           path: "/mycarft",

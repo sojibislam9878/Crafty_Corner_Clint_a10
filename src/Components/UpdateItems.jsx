@@ -10,7 +10,7 @@ const UpdateItems = () => {
 
     const {id}= useParams()
     useEffect(()=>{
-        fetch(`http://localhost:3000/singleCard/${id}`)
+        fetch(`https://assigenment10.vercel.app/singleCard/${id}`)
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
@@ -32,7 +32,7 @@ const UpdateItems = () => {
         console.log(data);
         const updatedDataWithAuthorInfo ={...data , email, displayName}
         console.log(updatedDataWithAuthorInfo);
-        fetch(`http://localhost:3000/updateCard/${id}`, {
+        fetch(`https://assigenment10.vercel.app/updateCard/${id}`, {
             method:"PUT", 
             headers:{
                 "content-type":"application/json"

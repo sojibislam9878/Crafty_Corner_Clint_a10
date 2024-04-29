@@ -1,25 +1,129 @@
 import { Link } from "react-router-dom";
-
+import useAuth from "../Hooks/useAuth";
 const CategoryItems = () => {
+  const { setSubCategory } = useAuth();
+
+  const whichCliked = (e) => {
+    const value = e.target.innerText;
+    console.log(value);
+    //     setSubCategory(value)
+    setSubCategory(value);
+  };
+
   return (
-    <div className="bg-base-200">
+    <div className="bg-base-300 py-16">
       <div className="container mx-auto p-4">
-      <div className="text-center">
-        <h1 className="text-4xl font-extrabold mt-6 font-garamond">Category Item section</h1>
-        <p className="leading-7 opacity-80 mt-6 lg:w-2/3 mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ipsum
-          numquam ex exercitationem, excepturi vel!
-        </p>
-      </div>
-      <div className="flex gap-6">
-       <Link to="/allcategory"> <div className=" min-h-16 min-w-10 border-2 border-red-300"></div></Link>
-       <Link><div className=" min-h-16 min-w-10 border-2 border-red-300"></div></Link>
-       <Link><div className=" min-h-16 min-w-10 border-2 border-red-300"></div></Link>
-       <Link><div className=" min-h-16 min-w-10 border-2 border-red-300"></div></Link>
-       <Link><div className=" min-h-16 min-w-10 border-2 border-red-300"></div></Link>
-       <Link><div className=" min-h-16 min-w-10 border-2 border-red-300"></div></Link>
-       
-      </div>
+        <div className="text-center">
+          <h1 className="text-4xl font-extrabold mt-6 font-garamond">
+            Category Item section
+          </h1>
+          <p className="leading-7 opacity-80 mt-6 lg:w-2/3 mx-auto">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro
+            ipsum numquam ex exercitationem, excepturi vel!
+          </p>
+        </div>
+        {/* category cards continer */}
+        <div className="flex flex-wrap justify-center gap-12 text-center mx-auto mt-8">
+          {/* cards */}
+
+          <div
+            onClick={whichCliked}
+            className="bg-base-200 px-12 py-4 rounded-xl flex justify-center group h-96 w-80"
+          >
+            <div className="relative">
+              <div className="h-52 w-52 border-2 border-dashed group-hover:animate-spin mr-10  border-blue-500 absolute rounded-full"></div>
+              <div className="h-52 w-52 rounded-full border overflow-hidden">
+                <img src="Frame.png" alt="" className="group-hover:scale-110 transition-all duration-1000" />
+              </div>
+              <p className="text-lg opacity-80 mt-3">Click Here for more items same gategory</p>
+              <Link to="/allcategory">
+                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">Clay Sculpture</button>
+              </Link>
+            </div>
+          </div>
+
+          <div
+            onClick={whichCliked}
+            className="bg-base-200 px-12 py-4 rounded-xl flex justify-center group h-96 w-80"
+          >
+            <div className="relative">
+              <div className="h-52 w-52 border-2 border-dashed group-hover:animate-spin mr-10  border-blue-500 absolute rounded-full"></div>
+              <div className="h-52 w-52 rounded-full border overflow-hidden">
+                <img src="Frame.png" alt="" className="group-hover:scale-110 transition-all duration-1000" />
+              </div>
+              <p className="text-lg opacity-80 mt-3">Click Here for more items same gategory</p>
+              <Link to="/allcategory">
+                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">Clay Sculpture</button>
+              </Link>
+            </div>
+          </div>
+
+          <div
+            onClick={whichCliked}
+            className="bg-base-200 px-12 py-4 rounded-xl flex justify-center group h-96 w-80"
+          >
+            <div className="relative">
+              <div className="h-52 w-52 border-2 border-dashed group-hover:animate-spin mr-10  border-blue-500 absolute rounded-full"></div>
+              <div className="h-52 w-52 rounded-full border overflow-hidden">
+                <img src="Frame.png" alt="" className="group-hover:scale-110 transition-all duration-1000" />
+              </div>
+              <p className="text-lg opacity-80 mt-3">Click Here for more items same gategory</p>
+              <Link to="/allcategory">
+                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">Metal Sculpture</button>
+              </Link>
+            </div>
+          </div>
+
+          <div
+            onClick={whichCliked}
+            className="bg-base-200 px-12 py-4 rounded-xl flex justify-center group h-96 w-80"
+          >
+            <div className="relative">
+              <div className="h-52 w-52 border-2 border-dashed group-hover:animate-spin mr-10  border-blue-500 absolute rounded-full"></div>
+              <div className="h-52 w-52 rounded-full border overflow-hidden">
+                <img src="Frame.png" alt="" className="group-hover:scale-110 transition-all duration-1000" />
+              </div>
+              <p className="text-lg opacity-80 mt-3">Click Here for more items same gategory</p>
+              <Link to="/allcategory">
+                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">Wood carving</button>
+              </Link>
+            </div>
+          </div>
+
+          <div
+            onClick={whichCliked}
+            className="bg-base-200 px-12 py-4 rounded-xl flex justify-center group h-96 w-80"
+          >
+            <div className="relative">
+              <div className="h-52 w-52 border-2 border-dashed group-hover:animate-spin mr-10  border-blue-500 absolute rounded-full"></div>
+              <div className="h-52 w-52 rounded-full border overflow-hidden">
+                <img src="Frame.png" alt="" className="group-hover:scale-110 transition-all duration-1000" />
+              </div>
+              <p className="text-lg opacity-80 mt-3 ">Click Here for more items same gategory</p>
+              <Link to="/allcategory">
+                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">Natural Material Sculpture</button>
+              </Link>
+            </div>
+          </div>
+
+          <div
+            onClick={whichCliked}
+            className="bg-base-200 px-12 py-4 rounded-xl flex justify-center group h-96 w-80"
+          >
+            <div className="relative">
+              <div className="h-52 w-52 border-2 border-dashed group-hover:animate-spin mr-10  border-blue-500 absolute rounded-full"></div>
+              <div className="h-52 w-52 rounded-full border overflow-hidden">
+                <img src="Frame.png" alt="" className="group-hover:scale-110 transition-all duration-1000" />
+              </div>
+              <p className="text-lg opacity-80 mt-3">Click Here for more items same gategory</p>
+              <Link to="/allcategory">
+                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">gello</button>
+              </Link>
+            </div>
+          </div>
+
+
+        </div>
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ const MyCarft = () => {
   const [sppinng, setSpinng] = useState(true);
   const { user } = useAuth();
   useEffect(() => {
-    fetch(`http://localhost:3000/myCarftItems/${user?.email}`)
+    fetch(`https://assigenment10.vercel.app/myCarftItems/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -31,7 +31,7 @@ const MyCarft = () => {
         return
       }
 
-      fetch(`http://localhost:3000/filtercraftItems?customization=${value}&&email=${user.email}`)
+      fetch(`https://assigenment10.vercel.app/filtercraftItems?customization=${value}&&email=${user.email}`)
       .then(res=>res.json())
       .then(data=>{
           console.log(data);
