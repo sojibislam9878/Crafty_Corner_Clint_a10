@@ -33,11 +33,19 @@ const CategoryItems = () => {
             <div className="relative">
               <div className="h-52 w-52 border-2 border-dashed group-hover:animate-spin mr-10  border-blue-500 absolute rounded-full"></div>
               <div className="h-52 w-52 rounded-full border overflow-hidden">
-                <img src="Frame.png" alt="" className="group-hover:scale-110 transition-all duration-1000" />
+                <img
+                  src="clay.jpeg"
+                  alt=""
+                  className="group-hover:scale-110 transition-all duration-1000"
+                />
               </div>
-              <p className="text-lg opacity-80 mt-3">Click Here for more items same gategory</p>
+              <p className="text-lg opacity-80 mt-3">
+                Click Here for more items same gategory
+              </p>
               <Link to="/allcategory">
-                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">Clay Sculpture</button>
+                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">
+                  Clay_sculpture
+                </button>
               </Link>
             </div>
           </div>
@@ -49,11 +57,19 @@ const CategoryItems = () => {
             <div className="relative">
               <div className="h-52 w-52 border-2 border-dashed group-hover:animate-spin mr-10  border-blue-500 absolute rounded-full"></div>
               <div className="h-52 w-52 rounded-full border overflow-hidden">
-                <img src="Frame.png" alt="" className="group-hover:scale-110 transition-all duration-1000" />
+                <img
+                  src="stone.jpeg"
+                  alt=""
+                  className="group-hover:scale-110 transition-all duration-1000"
+                />
               </div>
-              <p className="text-lg opacity-80 mt-3">Click Here for more items same gategory</p>
+              <p className="text-lg opacity-80 mt-3">
+                Click Here for more items same gategory
+              </p>
               <Link to="/allcategory">
-                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">Clay Sculpture</button>
+                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">
+                  Stone_sculpture
+                </button>
               </Link>
             </div>
           </div>
@@ -65,11 +81,19 @@ const CategoryItems = () => {
             <div className="relative">
               <div className="h-52 w-52 border-2 border-dashed group-hover:animate-spin mr-10  border-blue-500 absolute rounded-full"></div>
               <div className="h-52 w-52 rounded-full border overflow-hidden">
-                <img src="Frame.png" alt="" className="group-hover:scale-110 transition-all duration-1000" />
+                <img
+                  src="metal.jpeg"
+                  alt=""
+                  className="group-hover:scale-110 transition-all duration-1000"
+                />
               </div>
-              <p className="text-lg opacity-80 mt-3">Click Here for more items same gategory</p>
+              <p className="text-lg opacity-80 mt-3">
+                Click Here for more items same gategory
+              </p>
               <Link to="/allcategory">
-                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">Metal Sculpture</button>
+                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">
+                  Metal_sculpture
+                </button>
               </Link>
             </div>
           </div>
@@ -81,11 +105,43 @@ const CategoryItems = () => {
             <div className="relative">
               <div className="h-52 w-52 border-2 border-dashed group-hover:animate-spin mr-10  border-blue-500 absolute rounded-full"></div>
               <div className="h-52 w-52 rounded-full border overflow-hidden">
-                <img src="Frame.png" alt="" className="group-hover:scale-110 transition-all duration-1000" />
+                <img
+                  src="wood.jpeg"
+                  alt=""
+                  className="group-hover:scale-110 transition-all duration-1000"
+                />
               </div>
-              <p className="text-lg opacity-80 mt-3">Click Here for more items same gategory</p>
+              <p className="text-lg opacity-80 mt-3">
+                Click Here for more items same gategory
+              </p>
               <Link to="/allcategory">
-                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">Wood carving</button>
+                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">
+                  Wood_carving
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          <div
+            onClick={whichCliked}
+            className="bg-base-200 px-12 py-4 rounded-xl flex justify-center group h-96 w-80"
+          >
+            <div className="relative">
+              <div className="h-52 w-52 ml-12 border-2 border-dashed group-hover:animate-spin mr-10  border-blue-500 absolute rounded-full"></div>
+              <div className="h-52 w-52 ml-12 rounded-full border overflow-hidden">
+                <img
+                  src="nature.jpeg"
+                  alt=""
+                  className="group-hover:scale-110 transition-all duration-1000"
+                />
+              </div>
+              <p className="text-lg opacity-80 mt-3 ">
+                Click Here for more items same gategory
+              </p>
+              <Link to="/allcategory">
+                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">
+                  Natural_material_sculpture
+                </button>
               </Link>
             </div>
           </div>
@@ -97,32 +153,22 @@ const CategoryItems = () => {
             <div className="relative">
               <div className="h-52 w-52 border-2 border-dashed group-hover:animate-spin mr-10  border-blue-500 absolute rounded-full"></div>
               <div className="h-52 w-52 rounded-full border overflow-hidden">
-                <img src="Frame.png" alt="" className="group-hover:scale-110 transition-all duration-1000" />
+                <img
+                  src="beaded.jpeg"
+                  alt=""
+                  className="group-hover:scale-110 transition-all duration-1000"
+                />
               </div>
-              <p className="text-lg opacity-80 mt-3 ">Click Here for more items same gategory</p>
+              <p className="text-lg opacity-80 mt-3">
+                Click Here for more items same gategory
+              </p>
               <Link to="/allcategory">
-                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">Natural Material Sculpture</button>
+                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">
+                  Beaded_sculpture
+                </button>
               </Link>
             </div>
           </div>
-
-          <div
-            onClick={whichCliked}
-            className="bg-base-200 px-12 py-4 rounded-xl flex justify-center group h-96 w-80"
-          >
-            <div className="relative">
-              <div className="h-52 w-52 border-2 border-dashed group-hover:animate-spin mr-10  border-blue-500 absolute rounded-full"></div>
-              <div className="h-52 w-52 rounded-full border overflow-hidden">
-                <img src="Frame.png" alt="" className="group-hover:scale-110 transition-all duration-1000" />
-              </div>
-              <p className="text-lg opacity-80 mt-3">Click Here for more items same gategory</p>
-              <Link to="/allcategory">
-                <button className="mt-4 text-xl py-2 px-3 rounded-xl bg-slate-200">gello</button>
-              </Link>
-            </div>
-          </div>
-
-
         </div>
       </div>
     </div>

@@ -26,16 +26,19 @@ const MyCarft = () => {
   }
 
   const filter=(e)=>{
-      const value = e.target.value
-      if (!value) {
-        return
-      }
+    
+    const value = e.target.value
+    if (!value) {
+      return
+    }
+      setSpinng(true)
 
       fetch(`https://assigenment10.vercel.app/filtercraftItems?customization=${value}&&email=${user.email}`)
       .then(res=>res.json())
       .then(data=>{
           console.log(data);
           setMyItems(data)
+          setSpinng(false)
       })
 
   }
