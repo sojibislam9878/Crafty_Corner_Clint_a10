@@ -13,7 +13,7 @@ const SubCard = ({item}) => {
           <figure className="relativ overflow-hidden">
             <img src={photo} alt="Shoes" className="w-full lg:h-[484px] md:h-[735px] h-[285px] object-cover" />
             <div className="absolute h-1/5 w-full flex items-center justify-center bottom-10 group-hover:bottom-16 opacity-0 group-hover:opacity-100 transition-all duration-300">
-              <Link to= {`/subDetails/${_id}`}><button className="btn bg-[#B18B5E] border-none text-white hover:bg-[#34373F]">View Details</button></Link>
+              <Link to= {`/subDetails/${_id}`}><button className="btn hidden lg:flex bg-[#B18B5E] border-none text-white hover:bg-[#34373F]">View Details</button></Link>
             </div>
             <div className="absolute h-full w-1/5 lg:w-1/5 bg-black bg-opacity-0 flex  flex-col gap-5 items-center justify-center -right-10 group-hover:right-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
               <button data-tooltip-id="my-tooltip" data-tooltip-content="Add to Favorite" className="bg-base-100 p-3 rounded-full flex justify-center items-center hover:bg-[#B18B5E] hover:text-white transition-all duration-300">
@@ -32,6 +32,7 @@ const SubCard = ({item}) => {
         <div className="card-body">
           <h2 className="card-title flex justify-center font-garamond text-3xl">{item_name}</h2>
           <p className="text-center text-[#B18B5E] text-xl font-bold">${price} - <del className="text-gray-500 opacity-50">{oldPrice}</del></p>
+          <Link to= {`/subDetails/${_id}`}><button className="btn w-full lg:hidden bg-[#B18B5E] border-none text-white hover:bg-[#34373F]">View Details</button></Link>
         </div>
       </div>
     </div>
