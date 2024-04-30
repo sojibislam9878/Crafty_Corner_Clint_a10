@@ -3,6 +3,7 @@ import useAuth from "../Hooks/useAuth";
 import MyCardDetails from "./MyCardDetails";
 import NoData from "../Components/NoData";
 import Spinner from "../Components/Spinner";
+import { Helmet } from "react-helmet";
 
 const MyCarft = () => {
   const [myItems, setMyItems] = useState([]);
@@ -48,6 +49,9 @@ const MyCarft = () => {
 //   }
   return (
     <div className="container mx-auto p-4 mb-28">
+      <Helmet>
+        <title>{user.displayName}❜s all craft items</title>
+      </Helmet>
       <div className="flex flex-col justify-center items-center mt-3">
         <p className="font-semibold text-xl text-center">Filter Items according ❛customization❜ </p>
         <select onClick={filter} className="px-6 py-3 mt-4 border bg-base-200 rounded-xl text-xl font-semibold">

@@ -1,5 +1,6 @@
 
 import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
 import { FaRegStar } from "react-icons/fa";
 import { MdOutlineEdit } from "react-icons/md";
 import { RiDeleteBin2Fill } from "react-icons/ri";
@@ -44,6 +45,9 @@ const MyCardDetails = ({ item , reRender, setReRender }) => {
   return (
     <div>
       <div className="card card-compact bg-base-100 shadow-xl h-full">
+      <Helmet>
+        <title>My cards</title>
+      </Helmet>
         <figure>
           <img
             className="w-full lg:h-[484px] md:h-[735px] h-[285px] object-cover  transition duration-300 hover:scale-105"

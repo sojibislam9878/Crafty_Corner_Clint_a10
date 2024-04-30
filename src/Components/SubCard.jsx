@@ -1,14 +1,18 @@
 import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 import 'react-tooltip/dist/react-tooltip.css'
 
 const SubCard = ({item}) => {
-    const { item_name, photo, _id, price } = item;
+    const { item_name, photo, _id, price,subcategory_name } = item;
     const oldPrice = parseFloat(price)+100
     return (
         <div>
       <div className="card card-compact bg-base-200 shadow-xl h-full overflow-hidden group ">
+      <Helmet>
+        <title>All Items Of {subcategory_name}</title>
+      </Helmet>
         <div className=" ">
           <figure className="relativ overflow-hidden">
             <img src={photo} alt="Shoes" className="w-full lg:h-[484px] md:h-[735px] h-[285px] object-cover" />

@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import useAuth from "../Hooks/useAuth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const AddCarft = () => {
   const {
@@ -43,6 +44,9 @@ const AddCarft = () => {
   };
   return (
     <div className="container md:mb-28 mb-12 mt-6 mx-auto p-4 bg-base-300 md:mt-10 rounded-lg shadow-xl">
+      <Helmet>
+        <title>Add Craft</title>
+      </Helmet>
       {/* section header  */}
       <div className="text-center">
         <h1 className="text-4xl font-extrabold mt-6">Add a new Item</h1>

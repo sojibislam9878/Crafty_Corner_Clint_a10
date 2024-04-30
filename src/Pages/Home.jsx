@@ -5,6 +5,7 @@ import CraftItemCard from "../Components/CraftItemCard";
 import CategoryItems from "../Components/CategoryItems";
 import FAQSection from "../Components/FAQSection";
 import Contact from "../Components/Contact";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const { user } = useAuth();
@@ -14,6 +15,9 @@ const Home = () => {
   console.log(craftItems);
   return (
     <div>
+      <Helmet>
+        <title>Crafty Corner</title>
+      </Helmet>
       <Slider></Slider>
       <div className="container mx-auto p-4 md:mt-32 ">
         {/* section header  */}

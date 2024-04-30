@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllCarft = () => {
@@ -5,7 +6,10 @@ const AllCarft = () => {
 
   return (
     <div className="container mx-auto p-4 mb-28">
-      <h1 className="text-4xl mt-6 font-extrabold">All Art & Carft here :</h1>
+      <Helmet>
+        <title>All Art & Carft</title>
+      </Helmet>
+      <h1 className="text-4xl mt-6 font-extrabold">All Art & Carft Here :</h1>
       <div className=" overflow-auto">
         <table className="w-full table-auto mt-4">
           <thead className="bg-base-300 border-2">

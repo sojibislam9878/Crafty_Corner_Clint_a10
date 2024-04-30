@@ -4,6 +4,7 @@ import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
 import Spinner from "../Components/Spinner";
+import { Helmet } from "react-helmet";
 const SubCardDetails = () => {
     const { id } = useParams();
   console.log(id);
@@ -34,6 +35,9 @@ const SubCardDetails = () => {
   }
     return (
         <div className="lg:flex gap-4 mt-12 container mx-auto p-4 shadow-lg rounded-xl bg-base-200 md:mb-28 mb-12">
+          <Helmet>
+        <title>Details of {item_name}</title>
+      </Helmet>
       <div className=" lg:w-1/3 flex justify-center items-center">
         <img
           className="h-full w-full object-cover rounded-xl"

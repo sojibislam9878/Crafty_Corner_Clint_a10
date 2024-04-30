@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
     return (
         <div className="flex justify-center items-center h-screen">
+          <Helmet>
+        <title>404 not found</title>
+      </Helmet>
       <div className="text-center">
         <div className="w-2/3 mx-auto">
             <img src="errorpage.png" alt=""/>

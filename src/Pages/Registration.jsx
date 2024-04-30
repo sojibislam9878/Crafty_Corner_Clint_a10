@@ -4,6 +4,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet";
 const Registion = () => {
   const { user } = useAuth();
   console.log(user);
@@ -34,6 +35,9 @@ const Registion = () => {
   };
   return (
     <div className="flex justify-center p-4 pt-10 pb-16 bg-gradient-to-bl from-indigo-500 via-purple-500 to-pink-500">
+      <Helmet>
+        <title>Registration</title>
+      </Helmet>
       <div className=" rounded-lg p-6 md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-base-100">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1 className="text-4xl font-bold mt-12">Register New Account.</h1>

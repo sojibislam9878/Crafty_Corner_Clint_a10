@@ -3,6 +3,7 @@ import useAuth from '../Hooks/useAuth';
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const UpdateItems = () => {
     const {user}=useAuth()
@@ -60,6 +61,9 @@ const UpdateItems = () => {
 
         <div className="container mx-auto p-4 bg-base-300 md:mt-10 mt-6 md:mb-28   mb-12 rounded-lg shadow-xl">
           {/* section header  */}
+          <Helmet>
+        <title>Update || {item_name}</title>
+      </Helmet>
           <div className="text-center">
             <h1 className='text-4xl font-extrabold mt-6'>Wanna Update {item_name} details ?</h1>
             
