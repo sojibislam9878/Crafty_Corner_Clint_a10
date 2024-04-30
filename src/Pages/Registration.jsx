@@ -11,7 +11,7 @@ const Registion = () => {
   // navigate
   const navigate = useNavigate();
   const Locations = useLocation();
-  const form = Locations?.state || "/login";
+  const form = Locations?.state || "/";
   const {
     register,
     handleSubmit,
