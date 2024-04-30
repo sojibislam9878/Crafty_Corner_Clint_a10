@@ -77,7 +77,7 @@ const AddCarft = () => {
             <datalist id="subcategory">
               <option value="Clay_sculpture"></option>
               <option value="Stone_sculpture"></option>
-              <option value="Metal-sculpture"></option>
+              <option value="Metal_sculpture"></option>
               <option value="Wood_carving"></option>
               <option value="Natural_material_sculpture"></option>
               <option value="Beaded_sculpture"></option>
