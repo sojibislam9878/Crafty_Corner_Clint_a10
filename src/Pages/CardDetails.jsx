@@ -36,7 +36,7 @@ const CardDetails = () => {
 
 
   return (
-    <div className="lg:flex gap-4 mt-12 container mx-auto p-4 shadow-lgrounded-xl bg-base-200 mb-28">
+    <div className="lg:flex gap-4 mt-12 container mx-auto p-4 shadow-lgrounded-xl bg-base-200 md:mb-28 mb-12">
       <div className=" lg:w-1/3 flex justify-center items-center">
         <img
           className="h-full w-full object-cover rounded-xl"

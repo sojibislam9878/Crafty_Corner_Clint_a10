@@ -58,14 +58,11 @@ const UpdateItems = () => {
       };
       return (
 
-        <div className="container mx-auto p-4 bg-base-300 md:mt-10 mb-28 rounded-lg shadow-xl">
+        <div className="container mx-auto p-4 bg-base-300 md:mt-10 mt-6 md:mb-28   mb-12 rounded-lg shadow-xl">
           {/* section header  */}
           <div className="text-center">
             <h1 className='text-4xl font-extrabold mt-6'>Wanna Update {item_name} details ?</h1>
-            <p className='leading-7 opacity-80 mt-6 lg:w-2/3 mx-auto'>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ipsum
-              numquam ex exercitationem, excepturi vel!
-            </p>
+            
           </div>
           <form onSubmit={handleSubmit(onSubmit)} className=" pb-16 pt-10 md:px-28">
             <div className="md:grid grid-cols-2 gap-6">

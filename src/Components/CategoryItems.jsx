@@ -11,19 +11,18 @@ const CategoryItems = () => {
   };
 
   return (
-    <div className="bg-base-300 py-16">
+    <div className="bg-base-300 md:mt-32 mt-16 md:py-8">
       <div className="container mx-auto p-4">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold mt-6 font-garamond">
-            Category Item section
+          Art & Craft Categories
           </h1>
           <p className="leading-7 opacity-80 mt-6 lg:w-2/3 mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro
-            ipsum numquam ex exercitationem, excepturi vel!
+          Discover boundless creativity in our diverse array of Art & Craft categories. Unleash your imagination as you explore our curated selection of painting supplies, sculpting materials, DIY kits, and more
           </p>
         </div>
         {/* category cards continer */}
-        <div className="flex flex-wrap justify-center gap-12 text-center mx-auto mt-8">
+        <div className="flex flex-wrap justify-center md:gap-12 gap-6 text-center mx-auto md:mt-16 mt-8">
           {/* cards */}
 
           <div

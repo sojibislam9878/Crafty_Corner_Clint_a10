@@ -18,7 +18,7 @@ const Navbar = () => {
 
     document.querySelector("html").setAttribute("data-theme", theme)
   return (
-    <div className="sticky top-0 z-40 bg-base-100 shadow-xl">
+    <div className="sticky top-0 z-40 bg-base-100 shadow-xl ">
       <div className="navbar bg-base-100 container mx-auto p-4 ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -82,6 +82,29 @@ const Navbar = () => {
                   My Art & craft Items
                 </NavLink>
               </li>
+              {
+                user?(<li className="md:hidden">
+                <button
+                  onClick={logout}
+                  className="btn mt-4 bg-[#b39b7e] text-white font-bold hover:bg-[#997851]"
+                >
+                  Logout
+                </button>
+              </li>):(
+            <div className="mt-4">
+              <Link to="/login">
+                <button className="btn bg-[#b39b7e] text-white font-bold hover:bg-[#997851]">
+                  Login
+                </button>
+              </Link>
+              <Link to="/registration">
+                <button className="btn bg-[#b39b7e] text-white font-bold hover:bg-[#997851]">
+                  Register
+                </button>
+              </Link>
+            </div>
+          )
+              }
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost text-3xl font-garamond text-[#B18B5E]">
@@ -130,10 +153,11 @@ const Navbar = () => {
                 My Art & craft Items
               </NavLink>
             </li>
+            
           </ul>
         </div>
         <div className="navbar-end flex ">
-          <div className="mr-6">
+          <div className="mr-6 hidden md:flex">
             <label className="swap swap-rotate pt-1">
               {/* this hidden checkbox controls the state */}
               <input
@@ -191,7 +215,8 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            <div>
+            <div className="hidden md:flex">
+              <div>
               <Link to="/login">
                 <button className="btn bg-[#B18B5E] text-white font-bold hover:bg-[#997851]">
                   Login
@@ -202,6 +227,7 @@ const Navbar = () => {
                   Register
                 </button>
               </Link>
+              </div>
             </div>
           )}
         </div>

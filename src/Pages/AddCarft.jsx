@@ -42,14 +42,10 @@ const AddCarft = () => {
       });
   };
   return (
-    <div className="container mb-28 mx-auto p-4 bg-base-300 md:mt-10 rounded-lg shadow-xl">
+    <div className="container md:mb-28 mb-12 mt-6 mx-auto p-4 bg-base-300 md:mt-10 rounded-lg shadow-xl">
       {/* section header  */}
       <div className="text-center">
         <h1 className="text-4xl font-extrabold mt-6">Add a new Item</h1>
-        <p className="leading-7 opacity-80 mt-6 lg:w-2/3 mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ipsum
-          numquam ex exercitationem, excepturi vel!
-        </p>
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className=" pb-16 pt-10 md:px-28">
         <div className="md:grid grid-cols-2 gap-6">
@@ -75,12 +71,12 @@ const AddCarft = () => {
               className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
             />
             <datalist id="subcategory">
-              <option value="Clay Sculpture"></option>
-              <option value="Stone Sculpture"></option>
-              <option value="Metal Sculpture"></option>
-              <option value="Wood carving"></option>
-              <option value="Natural Material Sculpture"></option>
-              <option value="Beaded Sculpture"></option>
+              <option value="Clay_sculpture"></option>
+              <option value="Stone_sculpture"></option>
+              <option value="Metal-sculpture"></option>
+              <option value="Wood_carving"></option>
+              <option value="Natural_material_sculpture"></option>
+              <option value="Beaded_sculpture"></option>
             </datalist>
             {errors.subcategory_name && (
               <span className="text-red-600">Select a subcategory</span>

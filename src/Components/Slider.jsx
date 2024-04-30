@@ -38,6 +38,7 @@ const Slider = () => {
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
             }}
+            className="h-[510px] lg:h-full"
           >
             <div className="container mx-auto md:p-4 text-white text-center mt-3">
               <h1
@@ -84,6 +85,7 @@ const Slider = () => {
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
             }}
+            className="h-[510px] lg:h-full"
           >
             <div className="container mx-auto md:p-4 text-white text-center mt-3">
               <h1 className="lg:text-4xl text-xl font-extrabold lg:mt-7 pt-4 md:pt-12 font-garamond lg:pt-40 md:leading-10 lg:leading-[60px]">
@@ -120,6 +122,7 @@ const Slider = () => {
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
             }}
+            className="h-[510px] lg:h-full"
           >
             <div className="container mx-auto md:p-4 text-white text-center mt-3">
               <h1 className="lg:text-4xl text-xl font-extrabold lg:mt-7 pt-4 md:pt-12 font-garamond lg:pt-40 md:leading-10 lg:leading-[60px]">

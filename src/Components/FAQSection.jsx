@@ -1,19 +1,18 @@
 const FAQSection = () => {
   return (
-    <div className="container mx-auto p-4 mb-28">
+    <div className="container mx-auto p-4 md:mt-32 mt-8">
       <div
-        className="text-center pb-6 md:mt-32 mt-6"
+        className="text-center"
       >
         <h3 className="text-4xl font-extrabold font-garamond">FAQ</h3>
         <p className="opacity-80 leading-7 mt-6">
-          Find quick answers to common questions about Luxury Estates services
-          and properties.
+        Explore our FAQs to discover everything you need to know to enhance your artistic journey with ease
         </p>
       </div>
       <div className="lg:flex flex-row-reverse gap-6 mt-16">
         {/* image */}
-        <div className="flex-1 h-[560px] w-full ">
-          <img src="Frame.png" alt=""  className="h-full w-full object-cover"/>
+        <div className="flex-1 w-full">
+          <img src="Frame.png" alt=""  className="md:h-full h-96 w-full object-center md:object-cover"/>
         </div>
         {/* questions */}
         <div className="flex-1 flex justify-center items-center">

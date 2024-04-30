@@ -15,17 +15,16 @@ const Home = () => {
   return (
     <div>
       <Slider></Slider>
-      <div className="container mx-auto p-4 mt-28 mb-16">
+      <div className="container mx-auto p-4 md:mt-32 ">
         {/* section header  */}
         <div className="text-center">
-        <h1 className="text-4xl font-extrabold mt-6 font-garamond">Craft Item section</h1>
+        <h1 className="text-4xl font-extrabold mt-6 font-garamond">Craft Item</h1>
         <p className="leading-7 opacity-80 mt-6 lg:w-2/3 mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro ipsum
-          numquam ex exercitationem, excepturi vel!
+        Explore our exquisite collection of handcrafted items, where artistry meets imagination. From intricate pottery to meticulously woven textiles, each piece tells a story of skilled craftsmanship and passion
         </p>
       </div>
         {/* cards  */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:mt-16 mt-6">
           {
                 craftItems.map(item=><CraftItemCard key={item._id} item={item}></CraftItemCard>)
             }
