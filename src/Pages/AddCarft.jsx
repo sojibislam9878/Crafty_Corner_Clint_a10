@@ -162,14 +162,23 @@ const AddCarft = () => {
             )}
           </div>
           <div className="mt-4 md:mt-0">
-          <p className="font-bold opacity-70">User email :</p>
-            <input type="text" defaultValue={email} readOnly className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100" />
+            <p className="font-bold opacity-70">User email :</p>
+            <input
+              type="text"
+              defaultValue={email}
+              readOnly
+              className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+            />
           </div>
           <div className="mt-4 md:mt-0">
-          <p className="font-bold opacity-70">User name :</p>
-            <input type="text" defaultValue={displayName} readOnly className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100" />
+            <p className="font-bold opacity-70">User name :</p>
+            <input
+              type="text"
+              defaultValue={displayName}
+              readOnly
+              className="py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
+            />
           </div>
-
         </div>
         <div className="mt-6">
           <p className="font-bold opacity-70">Photo URL :</p>

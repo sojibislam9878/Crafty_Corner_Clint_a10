@@ -10,7 +10,7 @@ const CardDetails = () => {
   const { id } = useParams();
   console.log(id);
   const [card, setCard] = useState({});
-  const [sppinng, setSpinng] =useState(true)
+  const [sppinng, setSpinng] = useState(true);
 
   useEffect(() => {
     fetch(`https://assigenment10.vercel.app/singleCard/${id}`)
@@ -18,7 +18,7 @@ const CardDetails = () => {
       .then((data) => {
         console.log(data);
         setCard(data);
-        setSpinng(false)
+        setSpinng(false);
       });
   }, [id]);
   const {
@@ -32,9 +32,8 @@ const CardDetails = () => {
     stock_status,
   } = card;
   if (sppinng) {
-    return <Spinner></Spinner>
+    return <Spinner></Spinner>;
   }
-
 
   return (
     <div className="lg:flex gap-4 mt-12 container mx-auto p-4 shadow-lgrounded-xl bg-base-200 md:mb-28 mb-12">

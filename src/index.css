@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-    font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .font-garamond {
-    font-family: "EB Garamond", serif;
+  font-family: "EB Garamond", serif;
 }

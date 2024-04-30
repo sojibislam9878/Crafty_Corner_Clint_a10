@@ -1,4 +1,13 @@
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../../firebase/FirebaseConfig";
@@ -6,9 +15,8 @@ import { auth } from "../../firebase/FirebaseConfig";
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
-  
   const createUserWithEmail = (email, password, toast) => {
-    setLoading(true)
+    setLoading(true);
     if (password.length < 6) {
       return toast.warn("Password must be at least 6 characters long", {
         position: "top-right",
@@ -61,32 +69,31 @@ const AuthProvider = ({ children }) => {
   const login = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
-   // social login providers
+  // social login providers
 
-   const googleProvider = new GoogleAuthProvider();
-   const githubProvider = new GithubAuthProvider();
- 
-   const googleSignUP = () => {
-     signInWithPopup(auth, googleProvider)
-   };
-   const githubSignUP = () => {
-     signInWithPopup(auth, githubProvider)
-   };
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
 
+  const googleSignUP = () => {
+    signInWithPopup(auth, googleProvider);
+  };
+  const githubSignUP = () => {
+    signInWithPopup(auth, githubProvider);
+  };
 
-   const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-   //   user
+  //   user
   const [user, setUser] = useState(null);
   //   check user
   useEffect(() => {
-    const unsubcribe =  onAuthStateChanged(auth, (user) => {
+    const unsubcribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
       }
-      setLoading(false)
+      setLoading(false);
     });
-    return ()=>unsubcribe()
+    return () => unsubcribe();
   }, []);
   // logout
   const logout = () => {
@@ -96,7 +103,7 @@ const AuthProvider = ({ children }) => {
 
   // update user
   const updateUser = (name, photo) => {
-    setLoading(true)
+    setLoading(true);
     updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
@@ -111,24 +118,19 @@ const AuthProvider = ({ children }) => {
   };
   console.log(loading);
 
-  const [subCategory, setSubCategory]=useState('')
-
-
-
-  
+  const [subCategory, setSubCategory] = useState("");
 
   const values = {
     createUserWithEmail,
-    login,googleSignUP,
+    login,
+    googleSignUP,
     githubSignUP,
     user,
     logout,
-    updateUser, 
+    updateUser,
     loading,
-    subCategory, 
-    setSubCategory
-
-
+    subCategory,
+    setSubCategory,
   };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };

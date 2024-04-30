@@ -6,10 +6,10 @@ import { FaStarHalfAlt } from "react-icons/fa";
 import Spinner from "../Components/Spinner";
 import { Helmet } from "react-helmet";
 const SubCardDetails = () => {
-    const { id } = useParams();
+  const { id } = useParams();
   console.log(id);
   const [card, setCard] = useState({});
-  const [sppinng, setSpinng] =useState(true)
+  const [sppinng, setSpinng] = useState(true);
 
   useEffect(() => {
     fetch(`https://assigenment10.vercel.app/subSingleCard/${id}`)
@@ -17,7 +17,7 @@ const SubCardDetails = () => {
       .then((data) => {
         console.log(data);
         setCard(data);
-        setSpinng(false)
+        setSpinng(false);
       });
   }, [id]);
   const {
@@ -31,11 +31,11 @@ const SubCardDetails = () => {
     stock_status,
   } = card;
   if (sppinng) {
-    return <Spinner></Spinner>
+    return <Spinner></Spinner>;
   }
-    return (
-        <div className="lg:flex gap-4 mt-12 container mx-auto p-4 shadow-lg rounded-xl bg-base-200 md:mb-28 mb-12">
-          <Helmet>
+  return (
+    <div className="lg:flex gap-4 mt-12 container mx-auto p-4 shadow-lg rounded-xl bg-base-200 md:mb-28 mb-12">
+      <Helmet>
         <title>Details of {item_name}</title>
       </Helmet>
       <div className=" lg:w-1/3 flex justify-center items-center">
@@ -185,7 +185,7 @@ const SubCardDetails = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default SubCardDetails;

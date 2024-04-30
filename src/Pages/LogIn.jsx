@@ -47,7 +47,7 @@ const Login = () => {
       <div className="flex justify-center items-center p-4 pt-10 pb-12 ">
         <div className=" rounded-lg p-6  md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-base-100">
           <form onSubmit={handleSubmit(onSubmit)}>
-          <h1 className="text-4xl font-bold mt-12">Login Your Account.</h1>
+            <h1 className="text-4xl font-bold mt-12">Login Your Account.</h1>
             <p className="font-medium mt-6 opacity-70">
               Thank you for get back to Carfty Corner, let accesss our the best
               recommendation for you
@@ -65,7 +65,9 @@ const Login = () => {
             {errors.email && <span className="text-red-600">Enter Email</span>}
             <div className="relative">
               <div className=" flex justify-center items-center gap-2 border-b-2">
-                <span className="material-symbols-outlined mt-6 text-2xl">lock</span>
+                <span className="material-symbols-outlined mt-6 text-2xl">
+                  lock
+                </span>
                 <input
                   type={isHide ? "text" : "password"}
                   placeholder="password"

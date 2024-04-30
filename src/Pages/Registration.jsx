@@ -22,14 +22,13 @@ const Registion = () => {
   const handleHide = () => {
     setIsHide(!isHide);
   };
-  const { createUserWithEmail, updateUser, logout } = useAuth();
+  const { createUserWithEmail, updateUser} = useAuth();
 
   // create profile and update user
   const onSubmit = (data) => {
     const { email, password, name, photo } = data;
     createUserWithEmail(email, password, toast).then(() => {
       updateUser(name, photo);
-      logout();
       navigate(form);
     });
   };

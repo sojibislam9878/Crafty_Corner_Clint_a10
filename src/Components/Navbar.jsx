@@ -6,17 +6,17 @@ const Navbar = () => {
   const { user, logout } = useAuth();
   const normalLink = "lg:font-bold lg:text-lg lg:mr-2 mt-2 lg:mt-0";
   const activeLink = `bg-gradient-to-r from-[#B18B5E] to-[#d6aa76] border border-blure-500 text-white border-none hover:bg-transparent focus:bg-transparent focus:text-white ${normalLink}`;
-  const [theme, setTheme]=useState("light")
+  const [theme, setTheme] = useState("light");
 
-  const handleTheme =(e)=>{
+  const handleTheme = (e) => {
     if (e.target.checked) {
-      setTheme("dark")
-    }else{
-      setTheme("light")
+      setTheme("dark");
+    } else {
+      setTheme("light");
     }
-  }
+  };
 
-    document.querySelector("html").setAttribute("data-theme", theme)
+  document.querySelector("html").setAttribute("data-theme", theme);
   return (
     <div className="sticky top-0 z-40 bg-base-100 shadow-xl ">
       <div className="navbar bg-base-100 container mx-auto p-4 ">
@@ -82,32 +82,35 @@ const Navbar = () => {
                   My Art & craft Items
                 </NavLink>
               </li>
-              {
-                user?(<li className="md:hidden">
-                <button
-                  onClick={logout}
-                  className="btn mt-4 bg-[#b39b7e] text-white font-bold hover:bg-[#997851]"
-                >
-                  Logout
-                </button>
-              </li>):(
-            <div className="mt-4">
-              <Link to="/login">
-                <button className="btn bg-[#b39b7e] text-white font-bold hover:bg-[#997851]">
-                  Login
-                </button>
-              </Link>
-              <Link to="/registration">
-                <button className="btn bg-[#b39b7e] text-white font-bold hover:bg-[#997851]">
-                  Register
-                </button>
-              </Link>
-            </div>
-          )
-              }
+              {user ? (
+                <li className="md:hidden">
+                  <button
+                    onClick={logout}
+                    className="btn mt-4 bg-[#b39b7e] text-white font-bold hover:bg-[#997851]"
+                  >
+                    Logout
+                  </button>
+                </li>
+              ) : (
+                <div className="mt-4">
+                  <Link to="/login">
+                    <button className="btn bg-[#b39b7e] text-white font-bold hover:bg-[#997851]">
+                      Login
+                    </button>
+                  </Link>
+                  <Link to="/registration">
+                    <button className="btn bg-[#b39b7e] text-white font-bold hover:bg-[#997851]">
+                      Register
+                    </button>
+                  </Link>
+                </div>
+              )}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost text-3xl font-garamond text-[#B18B5E]">
+          <Link
+            to="/"
+            className="btn btn-ghost text-3xl font-garamond text-[#B18B5E]"
+          >
             Crafty Corner
           </Link>
         </div>
@@ -153,7 +156,6 @@ const Navbar = () => {
                 My Art & craft Items
               </NavLink>
             </li>
-            
           </ul>
         </div>
         <div className="navbar-end flex ">
@@ -217,16 +219,16 @@ const Navbar = () => {
           ) : (
             <div className="hidden md:flex">
               <div>
-              <Link to="/login">
-                <button className="btn bg-[#B18B5E] text-white font-bold hover:bg-[#997851]">
-                  Login
-                </button>
-              </Link>
-              <Link to="/registration">
-                <button className="btn bg-[#B18B5E] text-white font-bold hover:bg-[#997851]">
-                  Register
-                </button>
-              </Link>
+                <Link to="/login">
+                  <button className="btn bg-[#B18B5E] text-white font-bold hover:bg-[#997851]">
+                    Login
+                  </button>
+                </Link>
+                <Link to="/registration">
+                  <button className="btn bg-[#B18B5E] text-white font-bold hover:bg-[#997851]">
+                    Register
+                  </button>
+                </Link>
               </div>
             </div>
           )}

@@ -1,15 +1,15 @@
 const Contact = () => {
   return (
     <div className="container mx-auto p-4 md:mb-28 mb-8 md:mt-32 mt-8">
-        <div
-        className="text-center "
-      >
+      <div className="text-center ">
         <h3 className="text-4xl font-extrabold font-garamond">Contact Us</h3>
         <p className="leading-7 opacity-80 mt-6 lg:w-2/3 mx-auto">
-          Have a question or need assistance? Our Contact Us section is your gateway to personalized support and expert guidance.Get in touch today and lets make your creative vision a reality together.
+          Have a question or need assistance? Our Contact Us section is your
+          gateway to personalized support and expert guidance.Get in touch today
+          and lets make your creative vision a reality together.
         </p>
       </div>
-      <div className="p-4 bg-base-200 rounded-xl mt-10" >
+      <div className="p-4 bg-base-200 rounded-xl mt-10">
         <div className="text-center pt-6 mb-6">
           <h1 className="text-3xl font-bold">Still Have A Question?</h1>
           <p className="font-semibold opacity-80">We are available 24/7/365</p>
