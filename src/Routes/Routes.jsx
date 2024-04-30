@@ -11,6 +11,7 @@ import CardDetails from "../Pages/CardDetails";
 import UpdateItems from "../Components/UpdateItems";
 import ErrorPage from "../Pages/ErrorPage";
 import AllCategory from "../Components/AllCategory";
+import SubCardDetails from "../Components/SubCardDetails";
 
 
 export const router = createBrowserRouter([
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
         {
           path: "/details/:id",
           element:<PrivetRoute><CardDetails></CardDetails></PrivetRoute>,
+        },
+        {
+          path: "/subDetails/:id",
+          element:<PrivetRoute><SubCardDetails></SubCardDetails></PrivetRoute>,
         },
       ]
     },
