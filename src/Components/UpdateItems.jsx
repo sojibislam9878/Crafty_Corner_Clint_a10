@@ -105,12 +105,12 @@ const UpdateItems = () => {
               className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
             />
             <datalist id="subcategory">
-              <option value="Clay Sculpture"></option>
-              <option value="Stone Sculpture"></option>
-              <option value="Metal Sculpture"></option>
-              <option value="Wood carving"></option>
-              <option value="Natural Material Sculpture"></option>
-              <option value="Beaded Sculpture"></option>
+              <option value="Clay_sculpture"></option>
+              <option value="Stone_sculpture"></option>
+              <option value="Metal_sculpture"></option>
+              <option value="Wood_carving"></option>
+              <option value="Natural_material_sculpture"></option>
+              <option value="Beaded_sculpture"></option>
             </datalist>
             {errors.subcategory_name && (
               <span className="text-red-600">Give a Update Value</span>
@@ -158,12 +158,17 @@ const UpdateItems = () => {
           <div className="mt-4 md:mt-0">
             <p className="font-bold opacity-70">Customization :</p>
             <input
+              list="customization"
               type="text"
               placeholder="Customization Yes or No"
               defaultValue={customization}
               {...register("customization", { required: true })}
               className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
             />
+            <datalist id="customization">
+              <option value="Yes"></option>
+              <option value="No"></option>
+            </datalist>
             {errors.customization && (
               <span className="text-red-600">Give a Update Value</span>
             )}

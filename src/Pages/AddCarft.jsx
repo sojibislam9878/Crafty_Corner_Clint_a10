@@ -123,11 +123,16 @@ const AddCarft = () => {
           <div className="mt-4 md:mt-0">
             <p className="font-bold opacity-70">Customization :</p>
             <input
+              list="customization"
               type="text"
               placeholder="Customization Yes or No"
               {...register("customization", { required: true })}
               className=" py-4 w-full  rounded-lg md:mt-3 px-4 outline-none bg-base-100"
             />
+            <datalist id="customization">
+              <option value="Yes"></option>
+              <option value="No"></option>
+            </datalist>
             {errors.customization && (
               <span className="text-red-600">Write Yes or No</span>
             )}
