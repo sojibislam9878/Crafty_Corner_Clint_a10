@@ -69,6 +69,7 @@ const AuthProvider = ({ children }) => {
   const login = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
+  
   // social login providers
 
   const googleProvider = new GoogleAuthProvider();

@@ -1,18 +1,37 @@
 import useAuth from "../Hooks/useAuth";
 import Slider from "../Components/Slider";
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 import CraftItemCard from "../Components/CraftItemCard";
 import CategoryItems from "../Components/CategoryItems";
 import FAQSection from "../Components/FAQSection";
 import Contact from "../Components/Contact";
 import { Helmet } from "react-helmet";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Home = () => {
   const { user } = useAuth();
   console.log(user);
-  const allCraftItems = useLoaderData();
+  const [allCraftItems, setAllcraftItems]=useState([])
   const craftItems = allCraftItems.slice(0, 6);
   console.log(craftItems);
+useEffect(()=>{
+  // fetch("https://assigenment10.vercel.app/craftItems")
+  // .then(res=>res.json())
+  // .then(data=>{
+  //   console.log(data);
+  //   setAllcraftItems(data)
+  // })
+
+
+  axios.get("http://localhost:3200/craftitems" , {withCredentials:true})
+  .then(res=>{
+    setAllcraftItems(res.data)
+  })
+  
+  
+},[])
+
   return (
     <div>
       <Helmet>

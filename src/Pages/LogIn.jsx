@@ -4,7 +4,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
+import axios from "axios";
 const Login = () => {
   const Locations = useLocation();
   const navigate = useNavigate();
@@ -17,8 +18,16 @@ const Login = () => {
   const onSubmit = (data) => {
     login(data.email, data.password)
       .then((res) => {
-        console.log(res);
-        navigate(Locations?.state ? Locations.state : "/");
+        console.log(res.user);
+        const user = {email: data.email}
+        console.log(user);
+        axios.post("http://localhost:3200/jwt", user, {withCredentials:true})
+        .then(res=>{
+          console.log(res.data);
+          if (res.data.success) {
+            navigate(Locations?.state ? Locations.state : "/");
+          }
+        })
       })
       .catch(() => {
         toast.error("Wrong email or password! check again", {
@@ -41,9 +50,9 @@ const Login = () => {
 
   return (
     <div className=" bg-gradient-to-tr pb-10 from-indigo-500 via-purple-500 to-pink-500">
-      <Helmet>
+      {/* <Helmet>
         <title>Login</title>
-      </Helmet>
+      </Helmet> */}
       <div className="flex justify-center items-center p-4 pt-10 pb-12 ">
         <div className=" rounded-lg p-6  md:w-2/3 xl:w-1/3 mx-auto shadow-xl bg-base-100">
           <form onSubmit={handleSubmit(onSubmit)}>
